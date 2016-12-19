@@ -122,11 +122,42 @@ plt.plot(data)
 A couple of introductions to variables can be found here...
 
 
+#### maths
+
+A great feature of numpy arrays is that we can do maths with entire arrays at once:
+
+```python
+data*2
+```
+
+```
+array([ 10499.799804,  10454.419922,  10426.44043 , ...,    201.520004,
+          201.679992,    200.      ])
+```
+
+Returns 2  times each element of the original array, as does:
+
+```python
+data + data
+```
+
+```
+array([ 10499.799804,  10454.419922,  10426.44043 , ...,    201.520004,
+          201.679992,    200.      ])
+```
+
+And a final check:
+
+```python
+data - data
+```
+```
+array([ 0.,  0.,  0., ...,  0.,  0.,  0.])
+```
+
 #### indexing
 
-
-If we want to get a single number from the array,
-we must provide an _index_ in square bracket:
+If we want to get a single number from the array, we must provide an _index_ in square bracket:
 
 ```python
 data[0]
@@ -163,6 +194,11 @@ There are a couple of handy shortcuts with slices. First, if you don't supply on
 
 Also, negative indexes visit the elements in reverse order. Given this, which element would we be referring to when we write `data[-1]`? How about using `data[-3]``?
 
+A final slicing trick we'll use later, combines slices and maths:
+
+u[1:] - u[:-1]
+
+![Alt](../figs/vectorized_diff.png "difference")
 
 #### slicing one array with another
 
@@ -177,7 +213,7 @@ print(indices)
 array([  1,  44, 722])
 ```
 
-And now the fun begins, let's try slicing our `data` array with our `indices` array:
+Now the fun begins! Let's try slicing our `data` array with our `indices` array:
 
 ```python
 data[indices]
@@ -187,11 +223,29 @@ data[indices]
 array([ 5227.209961,  4862.569824,  3929.570068])
 ```
 
-Cool, so this returned the values of the `data` array, where the elements numbers (indexes) werer provided by the array `indices` (a numpy array we stored in a variable called `indices`)
+While it might not be immediately obvious, this returned the values of the `data` array, where the elements numbers (indexes) werer provided by the array `indices` (a numpy array we stored in a variable called `indices`)
+
+One way we could check this is by passing both the original and sliced arrays into the Python function `len()` (length):
+
+```python
+len(data)
+```
+```
+11496
+```
+
+```python
+len(data[indicis])
+```
+```
+3
+```
+So, out original numpy array had 11496 elements, while the sliced array has 3 - like we wanted.
+
 
 #### asking questions / boolean arrays
 
-Now we go up a gear. Frequently, we are going to want to ask questions about our data. Consider the following expression, and its output:
+Now we go up a gear. Frequently, we are going to want to ask quantitative questions about our data. Consider the following expression, and its output:
 
 ```python
 data > data.mean()
@@ -209,7 +263,9 @@ data.mean()
 1336.6577597914056
 ```
 
-So what about that output, an array of True and ad False values? In plain English, the code `data > data.mean()`,  could be stated as 'is the value(s) of `data` bigger than the mean value of the data'. Numpy interprets this element-by-element, and returns `True` if an an element / value us greater,, or returns `False` if an element is smaller. An array of "true" and `False` is called a Boolean array.
+So what about that output, an array of True and ad False values? In plain English, the code `data > data.mean()`,  could be stated as 'is the value(s) of `data` bigger than the mean value of the data'. Numpy interprets this element-by-element, and returns
+* `True` if an an element / value is greater than data.mean()
+* `False` if an element / value is smaller. An array of "true" and `False` is called a Boolean array.
 
 
 The kicker is that we can slice the original array, by this Boolean array:
@@ -223,25 +279,36 @@ array([ 5249.899902,  5227.209961,  5213.220215, ...,  1349.050049,
         1340.459961,  1346.359985])
 ```
 
+Now we can check how many values in our dataset are greater than the mean.
 
-## Challenge(s)
+```python
+len(data[data > data.mean()])
+```
 
-Remember that our `data` array contains the daily closing price for the Nasdaq composite index. We are interested in teh frequency with which taday's closing price follows yesterday's. The following code will return True if todays price `data[1:]` is greater than yesterday's `data[:-1]`. Otherwise it will return False. These True and False values are stored in a new array called `follow`.
+
+## Challenge
+
+First off, remember that our `data` array contains the daily closing price for the Nasdaq. We are interested in the overall frequency with which today's closing price _change_ follows yesterday's.
+
+We maintain that the following code will return True if todays price `data[1:]` is greater than yesterday's `data[:-1]`. Otherwise it will return False. These True and False values are stored in a new array called `follow`.
 
 ```python
 follow = data[:-1] < data[1:]
-``
+```
+Your challenge is to think about what consecutive values like `(...,True, True,...)`, or `(...,False, False,...)` mean?
 
-Your challenge is to think about what consecutive values (True, True), (False, False), mean?
-
-If this is obvious, then you may want to think about the meaning of
+If this is obvious, then you may want to think about the meaning of the following.
 
 ```python
 follow[:-1] == follow[1:]
 ```
 
+Finally, can you hazard a guess at the meaning of:
 
-## Plenary (Let's call this something else)
+(follow[:-1] == follow[1:]).sum(dtype=float)
+
+
+## End game
 
 Summarise the main learning objectives/ key points covered in your chapter. These are different from the Learning Objectives where you assume no knowledge. Here you can assume knowledge gained after reading your chapter.
 
