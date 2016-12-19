@@ -194,9 +194,8 @@ There are a couple of handy shortcuts with slices. First, if you don't supply on
 
 Also, negative indexes visit the elements in reverse order. Given this, which element would we be referring to when we write `data[-1]`? How about using `data[-3]``?
 
-A final slicing trick we'll use later, combines slices and maths:
+We'll demonstrate now, a trick we'll use later, the combining  of slices and maths (subtraction). Let's say we have an arbitrate arrau called `u `m then the meaning of the code `u[1:] - u[:-1]` is demonstrated in the following figure:
 
-u[1:] - u[:-1]
 
 ![Alt](../figs/vectorized_diff.png "difference")
 
