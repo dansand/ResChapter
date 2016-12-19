@@ -3,18 +3,18 @@
 ## Introduction
 
 
-Python is a general purpose programming language, designed to be easy to understand,  allowing beginners to focus on learning programming concepts. As a generic programming language it has no single role, but it is commonly used for processing text, numbers, images, scientific data, building websites and applications, and visualisation.
-
+Python is a general purpose programming language, designed to be easy to understand. As a generic programming language it has no single role, but it is commonly used for processing text, numbers, images, scientific data, building websites and applications, and visualisation. It enjoys enormous and growing popularity among the (data) scientific research community, as well as professional web adn application developers.
 
 
 ## Learning Objectives:
 
 
-In this chapter we're going to look a Python tool (Library) called Numpy (numeric Python). With Numpy we're going to attack a simple data science problem, yet one that has some profound implications.
+In this chapter we're going to look a Python tool (Library) called Numpy (numeric Python). A library is a specific set of tools designed to assist a common purpose, yet outside the `core` fucntions of the Langauges. Numpy helps with big (and little) sets of numbers. Depending on the situation, these could represent vectors, time series, tables, grids, matrices, etc.
+
 
 While you won't finish this chapter a fully-fledged Python programmer, we hope that you will get the 'flavour' of how Python works. Necessarily, we will introduce some extraneous concepts and terms, that we don't have time to fully-develop or explore . We will provide links ot material to help you master these subjects later on.
 
-Our main suggestion is to __try to understand and keep the data science problem in mind__. Hopefully, if you have a good handle on the problem itself, the utility of Python / Numoy will be self evident. If not, demand your money back.
+Using Numpy we're going to attack a simple data science problem, yet one that has some profound implications. Our main suggestion is to __try to understand and keep the data science problem in mind__. Hopefully, if you have a good handle on the problem itself, the utility of Python / Numpy will be self evident. If not, demand your money back.
 
 By the end of this chapter you will learn:
 
@@ -30,9 +30,7 @@ Python was first created by Guido von Rossum in 1990 and was named after Monty P
 
 That's right, Python is free. More than that, Python has a strong ties to the open source movement. This means there is a culture of sharing, cooperation and support.
 
-Python, Matlab, or R (or Java, C++, ...)? There are a lot of programming languages, and many tasks can be completed equally well in all of them. So how to decide? In our group, some grad students chose Python because it was stronger in discipline-specific Libraries than any of it's competetors (for instance Neuroscience, Geophysics).
-
-Some of us had also dabled in other languages first (e.g. Matlab, R), and found that there was litte 'wasted' effort in switching. Many core concepts, extend across all languages, not to mention the more ephemeral skill of 'thinking like a programmer'.
+Python, Matlab, or R (or Java, C++, ...)? There are a lot of programming languages, and many tasks can be completed equally well in all of them. So how to decide? In our group, some grad students chose Python because it was stronger in discipline-specific Libraries than any of it's competetors (for instance Neuroscience, Geophysics). Some of us had also dabled in other languages first (e.g. Matlab, R), and found that there was litte 'wasted' effort in switching. Many core concepts, extend across all languages, not to mention the more ephemeral skill of 'thinking like a programmer'.
 
 A few further considerations that recommend Python:
 
@@ -43,10 +41,11 @@ A few further considerations that recommend Python:
 
 ## Context
 
-
-This section provides the reader some broader context of the tool. Here you’ll define any of the terms you’ll be using in the rest of the chapter. Think of this as the extended glossary. Use language which is clear and to the point. The readers will refer back here if they’re confused with the terminology.
+The readers will refer back here if they’re confused with the terminology.
 
 Definitions of terms/glossary
+
+#### python terms
 
 Library (e.g Numpy)
 Variable
@@ -57,6 +56,7 @@ index
 slice
 Method
 
+#### Computer science terms
 
 Path
 MyBinder
@@ -68,21 +68,21 @@ MyBinder
 Our example looks at a real (data) science problem. In fact, we are going to to endeavour to _falsify_ a hypothesis.
 We'll try to show that there _are_ predictable patterns in day-to-day stockmarket data, a discovery which would contradict the _efficient market hypothesis_. Specifically, __we're going to look at whether today's market value _change_ follows yesterday's _change_, at a rate greater than expected if price changes were random__.
 
-_Remember, this is one example out of a vast Universe of problems that we could have chosen. Don't be lured into thinking that Python is a financial / economics tool. The data analysis here is totally general, and very similar problems will appear in multiple disciplines._
+_Remember, this is one example out of a plethora of problems that we could have chosen. Don't be lured into thinking that Python is a financial / economics tool. The data analysis here is totally general, and very similar problems will appear in multiple disciplines._
 
-First we're going need to meet Numpy, and learn the basics of  access, and query structured, numeric data.
+First we're going need to meet Numpy, and learn the basics of  accessing, and querying structured, numeric data.
 
 
 ## Numpy
 
 What do we mean by structured, numeric data? Numpy arrays deal with blocks of numbers, they have dimensions, and shapes.
-The shapes are always 'rectangular', meaning the blocks of numbers look like sequences (1d), rectangles (2d), or hyperectangles (nd). In this tutorial we'll deal only with 1d Numpy arrays, which are just a sequence of numbers stretching along their single axis.  
+The shapes are always 'rectangular', meaning the blocks of numbers look like sequences (1-D), rectangles (2-D), or hyperectangles (n-D). In this tutorial we'll deal only with 1d Numpy arrays, which are just a sequence of numbers stretching along their single axis.  Thinks of this as a time series, with n values (elements).
 
 Array Figures here...
 
-We are going to hit the ground running and import some numerical data. In this case, we have a csv (comma separated variable) file containing historical price and volume data from the Nasdaq Stock Exchange (to be precise, the Nasdaq Composite index). This tutorial assumes the data is located in the followinf _relative path_: `data/nasdaq.csv`.
+We are going to hit the ground running and import some numerical data. In this case, we have a csv (comma separated variable) file containing historical price and volume data from the Nasdaq Stock Exchange (to be precise, the Nasdaq Composite index). This tutorial assumes the data is located in the followinf _relative path_: `../data/nasdaq.csv`.
 
-We assume that you are running this code from the notebooks directory of this book. The easiest (although not Necessarily the most robust) way of running the code is to Launch a notebook using the mybinder service.
+We assume that you are running this code from the notebooks directory of this book. The easiest (although not necessarily the most robust) way of running the code is to Launch a notebook using the mybinder service. Otherwise we provide instructions at the bottom of this document to assist with installing your own version of Python.
 
 [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dansand/reschapter/archive/master.zip)
 
@@ -110,9 +110,17 @@ We can also assign an numpy array to a variable using the same syntax.  Let's re
 data = numpy.loadtxt('../data/nasdaq.csv')
 ```
 
-A couple of introductions to variables can be found here.
+The following lines will produce a simple plot of the the data
 
-Plot here...
+```python
+%pylab inline
+plt.plot(data)
+```
+
+![Alt](../figs/nasdaq.png "Nasdaq data (backwards)")
+
+A couple of introductions to variables can be found here...
+
 
 #### indexing
 
@@ -147,9 +155,18 @@ array([ 5249.899902,  5227.209961,  5213.220215,  5222.990234,
         5260.080078,  5244.600098])
 ```
 
+So the slice `[0:10]` means start at elemnent / index 0, and go up to (but not including) elemnent / index 10.
+
+The up to (but not including), is simply a decision the engineers made when writing the library, as was the decision to start counting at 0. Feel free to love / hate these conventions.
+
+There are a couple of handy shortcuts with slices. First, if you don't supply one of the indexes, either side of the colon, it defaults, to the start / end of the array. Hence `data[0:10] <=> data[:10]`.
+
+Also, negative indexes visit the elements in reverse order. Given this, which element would we be referring to when we write `data[-1]`? How about using `data[-3]``?
+
+
 #### slicing one array with another
 
-Slicing gets a little fancier, when we use one numpy array to slice another. Let's create a simple array with some integer values
+Slicing gets a little fancier when we use one numpy array to slice another. Let's create a simple array with some integer values
 
 ```python
 indices = np.array([1,44,722])
@@ -160,7 +177,7 @@ print(indices)
 array([  1,  44, 722])
 ```
 
-now the fun begins, let's try slicing our `data` array with our `indices` array:
+And now the fun begins, let's try slicing our `data` array with our `indices` array:
 
 ```python
 data[indices]
@@ -174,7 +191,7 @@ Cool, so this returned the values of the `data` array, where the elements number
 
 #### asking questions / boolean arrays
 
-Now we go up a gear. Frequently, we are going to want to ask questions about our data. Consider the following expression, and it's output:
+Now we go up a gear. Frequently, we are going to want to ask questions about our data. Consider the following expression, and its output:
 
 ```python
 data > data.mean()
@@ -183,7 +200,7 @@ data > data.mean()
 ```
 array([ True,  True,  True, ..., False, False, False], dtype=bool)
 ```
-We know what `data` is. The new parts here are the `>` simple and the strange `data.mean()` thingo.  You mught have guessed that `>` is a Python operator, meaning _greater than_. `data.mean()`  returns the mean of the data array. After a bit more Python tarining, you will understand that we have accessed a _Method_. For now, it's probably easiest to accept that `data.mean()` stands for a number - the mean of the dataset. To test this, try running `data.mean()` by itself.
+We know what `data` is. The new parts here are the `>` symbol and the strange `data.mean()` thingo.  You may guess that `>` is similar to the mathematical _greater than_ operator. Well done. The expression `data.mean()` simply returns the mean of the data array. So `data.mean()` simply stands for a number - the mean of the dataset. To test this, try running `data.mean()` by itself.
 
 ```
 data.mean()
@@ -246,5 +263,9 @@ The efficient markets hypothesis (EMH), popularly known as the Random Walk Theor
 is the proposition that current stock prices fully reflect available information about the
 value of the firm, and there is no way to earn excess profits, (more than the market over
 all), by using this information.
+
+After a bit more Python training, you will understand that in writing `data.mean()` that we have accessed a _Method_ of the object `data`.
+
+Installing Python
 
 ## Bibliography
