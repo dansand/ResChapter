@@ -5,6 +5,12 @@
 
 Python is a general purpose programming language, designed to be easy to understand. As a generic programming language it has no single role, but it is commonly used for processing text, numbers, images, scientific data, building websites and applications, and visualisation. It enjoys enormous and growing popularity among the (data) scientific research community, as well as professional web adn application developers.
 
+Python was first created by Guido von Rossum in 1990 and was named after Monty Python's Flying Circus. It has since been developed by a large team of volunteers and is freely available from the Python Software Foundation.
+
+That's right, Python is free. More than that, Python has a strong ties to the open source movement. This means there is a culture of sharing, cooperation and support.
+
+Python, Matlab, or R (or Java, C++, ...)? There are a lot of programming languages, and many tasks can be completed equally well in all of them. So how to decide? In our group, some grad students chose Python because it was stronger in discipline-specific Libraries than any of it's competetors (for instance Neuroscience, Geophysics). Some of us had also dabled in other languages first (e.g. Matlab, R), and found that there was litte 'wasted' effort in switching. Many core concepts, extend across all languages, not to mention the more ephemeral skill of 'thinking like a programmer'.
+
 
 ## Learning Objectives:
 
@@ -24,20 +30,6 @@ By the end of this chapter you will learn:
 
 Finally, the introduction should end with a contents page listing how the rest of the chapter will flow.
 
-## Background
-
-Python was first created by Guido von Rossum in 1990 and was named after Monty Python's Flying Circus. It has since been developed by a large team of volunteers and is freely available from the Python Software Foundation.
-
-That's right, Python is free. More than that, Python has a strong ties to the open source movement. This means there is a culture of sharing, cooperation and support.
-
-Python, Matlab, or R (or Java, C++, ...)? There are a lot of programming languages, and many tasks can be completed equally well in all of them. So how to decide? In our group, some grad students chose Python because it was stronger in discipline-specific Libraries than any of it's competetors (for instance Neuroscience, Geophysics). Some of us had also dabled in other languages first (e.g. Matlab, R), and found that there was litte 'wasted' effort in switching. Many core concepts, extend across all languages, not to mention the more ephemeral skill of 'thinking like a programmer'.
-
-A few further considerations that recommend Python:
-
-* Strong web presence (stack overflow)
-* Conference and meetups (Scipy, PyData, Py Con)
-* Jupyter
-
 
 ## Context
 
@@ -56,17 +48,15 @@ index
 slice
 Method
 
-#### Computer science terms
-
-Path
-MyBinder
-
 
 
 ## A data science example
 
 Our example looks at a real (data) science problem. In fact, we are going to to endeavour to _falsify_ a hypothesis.
-We'll try to show that there _are_ predictable patterns in day-to-day stockmarket data, a discovery which would contradict the _efficient market hypothesis_. Specifically, __we're going to look at whether today's market value _change_ follows yesterday's _change_, at a rate greater than expected if price changes were random__.
+We'll try to show that there _are_ predictable patterns in day-to-day stockmarket data, a discovery which would contradict the _efficient market hypothesis_. There are a number of statistical analyses and tests that could help with this problem - (for instance we could look at the the autocorrelation of the sign of the signal derivative). 
+
+Specifically, __we're going to look at whether today's market value _change_ follows yesterday's _change_, at a rate greater than expected if price changes were random__.
+
 
 _Remember, this is one example out of a plethora of problems that we could have chosen. Don't be lured into thinking that Python is a financial / economics tool. The data analysis here is totally general, and very similar problems will appear in multiple disciplines._
 
@@ -320,6 +310,10 @@ Where to next? Give the reader some guide to find more information or how to bui
 
 Bibliography to end.
 *** APA referencing
+
+## Epilogue
+
+See the github repo for a more rigourous statistical test
 
 ## notes
 
