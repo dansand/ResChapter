@@ -48,18 +48,16 @@ Finally, the introduction should end with a contents page listing how the rest o
 ## A data science problem
 
 Our example looks at a real (data) science problem. In fact, we are going to to endeavour to _falsify_ a hypothesis.
-We'll try to show that there _are_ predictable patterns in day-to-day stockmarket data, a discovery which would contradict the _efficient market hypothesis_. There are a number of statistical analyses and tests that could help with this problem - (for instance we could perform what's called the _runs test_). Our workflow will be somewhat simpler though. We will focus on try to answer __how often does one days's market value _change_ follows the previous day's _change___.
+We'll try to show that there _are_ predictable patterns in day-to-day stockmarket data, a discovery which would contradict the _efficient market hypothesis_. There are a number of statistical analyses and tests that could help with this problem - (for instance we could perform what's called the _runs test_). Our workflow will be somewhat simpler though: We will try to answer __what is the overall frequency with which one days's market value _change_ follows the previous day's _change___.
 
 
 _Remember, this is one example out of a vast number of problems that we could have chosen. Don't be lured into thinking that Python is a financial / economics tool. The data analysis here is totally general, and very similar problems (i.e. analysis on blocks of numbers) will appear in multiple disciplines._
 
 First we're going need to meet Numpy, and learn the basics of accessing, and querying structured, numeric data.
 
-
 ## Numpy
 
-What do we mean by structured, numeric data? Numpy arrays deal with blocks of numbers, they have dimensions, and shapes.
-The shapes are always 'rectangular', meaning the blocks of numbers look like sequences (1-D), grids (2-D), or (hyper-) voxels (n-D). In this tutorial we'll deal only with 1-D Numpy arrays, which are just a sequence of numbers stretching along their single axis.  Thinks of this as a time series, with n values (which we call the elements of the array).
+What do we mean by structured, numeric data? Numpy arrays are tables of numbers. The tables of may look like sequences (1-D), grids (2-D), or hyper-grids (n-D). In this tutorial we'll deal only with 1-D Numpy arrays, which are just a sequence of numbers stretching along their single axis.  Think of these data as a time series, with n values (which we call the elements of the array).
 
 Array Figures here...
 
@@ -140,7 +138,7 @@ data - data
 array([ 0.,  0.,  0., ...,  0.,  0.,  0.])
 ```
 
-#### the joy of indexing
+#### indexing
 
 If we want to get a single number from the array, we provide the number that rrporesents the position of the element in teh array. This number is known as the _index_, and we refer to this process as _indexing_. When indexing an array, we provid the index in square brackets immediately after the _variable_ that represtents the Numpy array:
 
@@ -159,9 +157,7 @@ print('first value in data:', data[0])
 ('first value in data:', 5249.8999020000001)
 ```
 
-Okay, if you;ve got this far well done! We just introduced a whole heap of concepts, at a pace that may have left you giddy!
-
-Let'l briefly summarise whet we did:
+Okay, if you;ve got this far well done! We just introduced a whole heap of concepts, at a pace that may have left you somewhat overwhelmed! Let's briefly summarise what we just did:
 
 * imported a python library named Numpy
 * used a _fucntion_ from Numpy to load a text file from out computer's filesystem
