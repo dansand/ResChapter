@@ -301,10 +301,12 @@ Okay, nearly there. This last line of code forms yet another array, containing `
 seq = follow[:-1] == follow[1:]
 ```
 
-Finally, can you hazard a guess at the meaning of:
+Your challeng is to combine the followinf two Python expressions to answer the question what is the overall frequency with which today's closing price _change_ follows yesterday's.
 
-(follow[:-1] == follow[1:]).sum(dtype=float)
 
+```python
+seq.sum(), len(data)
+```
 
 ## End game
 
