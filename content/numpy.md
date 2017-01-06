@@ -34,9 +34,6 @@ Finally, the introduction should end with a contents page listing how the rest o
 
 ## Context
 
-The readers will refer back here if they’re confused with the terminology.
-
-Definitions of terms/glossary
 
 #### python terms
 
@@ -113,7 +110,7 @@ plt.plot(data)
 A couple of introductions to variables can be found here...
 
 
-#### maths
+#### maths with arrays
 
 A great feature of numpy arrays is that we can do maths with entire arrays at once:
 
@@ -175,7 +172,7 @@ Let'l briefly summarise whet we did:
 * passed our variable to a different fucntion to create  quick plot.
 * learnt how to access a _single_ element of our Numpy array using _indexing_. 
 
-#### slicing
+#### slicing and dicing
 
 we can select whole sections as well. This is called a _slice_ For example, we can select the first ten days, we could do:
 
@@ -298,9 +295,7 @@ We maintain that the following code will return True if todays price `data[1:]` 
 ```python
 follow = data[:-1] < data[1:]
 ```
-Your challenge is to think about what consecutive values like `(...,True, True,...)`, or `(...,False, False,...)` mean?
-
-If this is obvious, then you may want to think about the meaning of the following.
+The following code will return True if an element has the same value as the preceeding element. This is the same as saying, return  `True ` if Yesterday's price _change_ was the same as _today's_ price change.
 
 ```python
 follow[:-1] == follow[1:]
