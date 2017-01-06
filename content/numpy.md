@@ -37,14 +37,14 @@ Finally, the introduction should end with a contents page listing how the rest o
 
 #### python terms
 
-Library (e.g Numpy)
-Variable
-Function
-Boolean
-Element
-index
-slice
-Method
+* Library (e.g Numpy)
+* Variable
+* Function
+* Boolean
+* Elemeni
+* index
+* slice
+* Method
 
 
 
