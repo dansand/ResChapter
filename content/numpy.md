@@ -290,15 +290,15 @@ len(data[data > data.mean()])
 
 First off, remember that our `data` array contains the daily closing price for the Nasdaq. We are interested in the overall frequency with which today's closing price _change_ follows yesterday's.
 
-We maintain that the following code will return True if todays price `data[1:]` is greater than yesterday's `data[:-1]`. Otherwise it will return False. These True and False values are stored in a new array called `follow`.
+Tthe following line code will return a Numpy array. That array will have one of two values: `True` if todays price `data[1:]` is greater than yesterday's `data[:-1]`; otherwise `False`. The array containing these True and False values are assinged to the new array which we have called `follow`.
 
 ```python
 follow = data[:-1] < data[1:]
 ```
-The following code will return True if an element has the same value as the preceeding element. This is the same as saying, return  `True ` if Yesterday's price _change_ was the same as _today's_ price change.
+Okay, nearly there. This last line of code forms yet another array, containing `True` if an element has the same value as the preceeding element. This is the same as saying, return `True ` if Yesterday's price _change_ was the same as _today's_ price change, otherwise return `False`. Once again these values are assigned to a new variable, called `seq`. 
 
 ```python
-follow[:-1] == follow[1:]
+seq = follow[:-1] == follow[1:]
 ```
 
 Finally, can you hazard a guess at the meaning of:
