@@ -15,12 +15,15 @@ Python, Matlab, or R (or Java, C++, ...)? There are a lot of programming languag
 ## Learning Objectives:
 
 
-In this chapter we're going to look a Python tool (Library) called Numpy (numeric Python). A library is a specific set of tools designed to assist a common purpose, yet outside the `core` fucntions of the Langauges. Numpy helps with big (and little) sets of numbers. Depending on the situation, these could represent vectors, time series, tables, grids, matrices, etc.
-
-
-While you won't finish this chapter a fully-fledged Python programmer, we hope that you will get the 'flavour' of how Python works. Necessarily, we will introduce some extraneous concepts and terms, that we don't have time to fully-develop or explore . We will provide links ot material to help you master these subjects later on.
+In this chapter we're going to look a Python tool (Library) called Numpy (numeric Python). A library is a specific set of tools designed to assist a common purpose, yet outside the `core` fucntions of the Langauges. Numpy helps with big (and little) structured groups of numbers (arrays). Depending on the situation, these could represent vectors, time series, tables, grids, matrices, etc.
 
 Using Numpy we're going to attack a simple data science problem, yet one that has some profound implications. Our main suggestion is to __try to understand and keep the data science problem in mind__. Hopefully, if you have a good handle on the problem itself, the utility of Python / Numpy will be self evident. If not, demand your money back.
+
+
+While you won't finish this chapter a fully-fledged Python programmer, we hope that you will get a sense of the 'flavour' of how Python works. If you haven't programmed before, don't get too worried about understanding _every_ piece of code that's written, but do instead try to focus on how the programming approach to our __data science problem__ differs from a workflow you might develop using a spreadsheet or application (for instance Excel or SPSS).
+
+Necessarily, we will introduce some extraneous concepts and terms, that we don't have time to fully-develop or explore . We will provide links ot material to help you master these subjects later on.
+
 
 By the end of this chapter you will learn:
 
@@ -184,10 +187,12 @@ There are a couple of handy shortcuts with slices. First, if you don't supply on
 
 Also, negative indexes visit the elements in reverse order. Given this, which element would we be referring to when we write `data[-1]`? How about using `data[-3]``?
 
-We'll demonstrate now, a trick we'll use later, the combining  of slices and maths (subtraction). Let's say we have an arbitrate arrau called `u `m then the meaning of the code `u[1:] - u[:-1]` is demonstrated in the following figure:
+We'll demonstrate now, a trick we'll use later, the combining  of slices and maths (subtraction). Let's say we have an arbitrate array called u then the meaning of the expression u[1:] - u[:-1] is demonstrated in the following figure:
 
 
 ![Alt](../figs/vectorized_diff.png "difference")
+
+The array that results from  u[1:] - u[:-1] is the nth + 1 element of u minus the nth element. Necessarily, output array is one element shorter that u (we loose one element of overlap when we offset)
 
 #### slicing one array with another
 
