@@ -3,17 +3,17 @@
 ## Introduction
 
 
-Python is a _simple general-purpose programming language_. As a general-purpose programming language it is not connected with a single task or discipline, howevever it is commonly used for processing text, numbers, images, scientific data, building websites and applications, and visualisation. It enjoys significant and growing popularity among the (data) scientific research community, as well as professional web and application developers.
+Python is a _simple general-purpose programming language_. As a general-purpose programming language it is not connected with a single task or discipline, howevever it is commonly used for processing text, numbers, images, scientific data, building websites and applications, and visualisation. It enjoys significant and growing popularity among the (data) scientific community.
 
 Python was first created by Guido von Rossum in 1990 and was named after Monty Python's Flying Circus. It has since been developed by a large team of volunteers and is freely available from the Python Software Foundation. That's right, Python is free. More than that, Python has a strong ties to the open source movement. This means there is a culture of sharing, cooperation and support.
 
-Python, Matlab, or R (or Java, C++, ...)? There are a lot of programming languages, and many tasks can be completed equally well in all of them. So how to decide? In our group, some grad students chose Python because it was stronger in discipline-specific Libraries than any of it's competetors (for instance Neuroscience, Geophysics). Some of us had also dabled in other languages first (e.g. Matlab, R), and found that there was litte 'wasted' effort in switching. Many core concepts, extend across all languages, not to mention the more ephemeral skill of 'thinking like a programmer'.
+Python, Matlab, or R (or Java, C++, ...)? There are a lot of programming languages, and many tasks can be completed equally well in all of them. So how to decide? In our group, some researchers chose Python because it was stronger in discipline-specific Libraries than any of it's competetors (for instance Neuroscience, Geophysics). However, some of us had also dabled in other languages first (e.g. Matlab, R), and found that there was litte 'wasted' effort in switching. Many core concepts, extend across all languages, not to mention the more ephemeral skill of 'thinking like a programmer'.
 
 
 ## Learning Objectives:
 
 
-In this chapter we're going to look a Python tool (Library) called Numpy (numeric Python). A library is a specific set of functionality (code) designed to assist a common purpose, yet outside the `core` capabilities of the Langauge. Numpy provides the ability to work with structured groups of numbers (arrays). Depending on the situation, these could represent vectors, time series, tables, grids, matrices, etc.
+In this chapter we're going to look a Python library called Numpy (numeric Python). A library is a specific set of functionality (code) designed to assist a common purpose, yet outside the `core` capabilities of the Langauge. Numpy provides the ability to work with structured groups of numbers (arrays). Depending on the situation, these could represent vectors, time series, tables, grids, matrices, etc.
 
 Using Numpy we're going to tackle a simple data science problem, yet one that has some profound implications. Our main suggestion is to __try to understand and keep the data science problem in mind__. Hopefully, if you have a good handle on the problem itself, the utility of Python / Numpy will be self evident. If not, demand your money back.
 
@@ -22,15 +22,13 @@ While you won't finish this chapter a fully-fledged Python programmer, we hope t
 
 Necessarily, we will introduce some extraneous concepts and terms, that we don't have time to fully-develop or explore . We will provide links ot material to help you master these subjects later on.
 
-
 By the end of this chapter you will learn:
 
-1. Why structured, numeric data is cool and totally relevant
+1. Why structured, numeric data is relevant
 2. How to handle, access, and query structured, numeric data, using Python
 3. The 'flavour' of using Numpy for a data science problem.
 
 Finally, the introduction should end with a contents page listing how the rest of the chapter will flow.
-
 
 ## Context
 
@@ -47,11 +45,10 @@ Finally, the introduction should end with a contents page listing how the rest o
 * Method
 
 
-
 ## A data science problem
 
 Our example looks at a real (data) science problem. In fact, we are going to to endeavour to _falsify_ a hypothesis.
-We'll try to show that there _are_ predictable patterns in day-to-day stockmarket data, a discovery which would contradict the _efficient market hypothesis_. There are a number of statistical analyses and tests that could help with this problem - (for instance we could perform what;s called the _runs test_). Our workflow will be somewhat simpler though. We will focus on try to answer __ how often does one days's market value _change_ follows the previous day's _change_ __.
+We'll try to show that there _are_ predictable patterns in day-to-day stockmarket data, a discovery which would contradict the _efficient market hypothesis_. There are a number of statistical analyses and tests that could help with this problem - (for instance we could perform what's called the _runs test_). Our workflow will be somewhat simpler though. We will focus on try to answer __how often does one days's market value _change_ follows the previous day's _change___.
 
 
 _Remember, this is one example out of a vast number of problems that we could have chosen. Don't be lured into thinking that Python is a financial / economics tool. The data analysis here is totally general, and very similar problems (i.e. analysis on blocks of numbers) will appear in multiple disciplines._
