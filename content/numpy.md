@@ -3,7 +3,7 @@
 ## Introduction
 
 
-Python is what you could call a simple general purpose programming language. As a generic programming language it has no single role, but it is commonly used for processing text, numbers, images, scientific data, building websites and applications, and visualisation. It enjoys significant and growing popularity among the (data) scientific research community, as well as professional web and application developers.
+Python is a _simple general-purpose programming language_. As a general-purpose programming language it is not connected with a single task or discipline, howevever it is commonly used for processing text, numbers, images, scientific data, building websites and applications, and visualisation. It enjoys significant and growing popularity among the (data) scientific research community, as well as professional web and application developers.
 
 Python was first created by Guido von Rossum in 1990 and was named after Monty Python's Flying Circus. It has since been developed by a large team of volunteers and is freely available from the Python Software Foundation. That's right, Python is free. More than that, Python has a strong ties to the open source movement. This means there is a culture of sharing, cooperation and support.
 
