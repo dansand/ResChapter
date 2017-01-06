@@ -301,7 +301,7 @@ Okay, nearly there. This last line of code forms yet another array, containing `
 seq = follow[:-1] == follow[1:]
 ```
 
-Your challeng is to combine the followinf two Python expressions to answer the question what is the overall frequency with which today's closing price _change_ follows yesterday's.
+Your challenge is to combine the following two Python expressions to answer the question what is the overall frequency with which today's closing price _change_ follows yesterday's.
 
 
 ```python
