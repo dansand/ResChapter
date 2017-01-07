@@ -57,7 +57,7 @@ First we're going need to meet Numpy, and learn the basics of accessing, and que
 
 ## Numpy
 
-What do we mean by structured, numeric data? Numpy arrays are tables of numbers. The tables of may look like sequences (1-D), grids (2-D), or hyper-grids (n-D). In this tutorial we'll deal only with 1-D Numpy arrays, which are just a sequence of numbers stretching along their single axis.  Think of these data as a time series, with n values (which we call the elements of the array).
+What do we mean by structured, numeric data? Numpy arrays are tables of numbers. The tables of may look like sequences (1-D), grids (2-D), or hyper-grids (n-D). In this tutorial we'll deal only with 1-D Numpy arrays, which are just a sequence of numbers stretching along their single axis.  Think of these data as a time series, with `n` values (which we call the elements of the array).
 
 Array Figures here...
 
@@ -65,8 +65,7 @@ We are going to hit the ground running and import some numerical data. In this c
 
 We assume that you are running this code from the notebooks directory of this book. The easiest (although not necessarily the most robust) way of running the code is to Launch a notebook using the mybinder service. We also provide instructions (links) at the bottom of this document to assist with installing your own version of Python.
 
-[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dansand/reschapter/archive/master.zip)
-
+[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dansand/reschapter)
 
 #### importing data
 
