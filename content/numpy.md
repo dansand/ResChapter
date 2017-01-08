@@ -327,23 +327,23 @@ len(data[ba])
 
 #The final flourish
 
-Before we put together our analysis, remember that our `data` array contains the daily closing price for the Nasdaq Composite Index. We are interested in the overall frequency with which today's closing price _change_ follows yesterday's.
+Before we put together our analysis, recall that our `data` array contains the daily closing price for the Nasdaq Composite Index, and that we are interested in the overall frequency with which today's closing price _change_ follows yesterday's.
 
-The following line code combines all the Pyton/Numpy skills we have developed. Running this code will return a Numpy array which will have one of two values: `True` if one day's price (`data[1:]`) is greater than the previous day's price `data[:-1]`; otherwise `False`. These True and False values are assigned to the new array which we have called `follow`.
+The following line code combines all the Python/Numpy skills we have developed. Running this code will return a Numpy array which will have one of two values: `True` if one day's price (`data[1:]`) is greater than the previous day's price `data[:-1]`; otherwise `False`. These True and False values are assigned to the new array which we have called `follow`.
 
 ```python
 follow = data[:-1] < data[1:]
 ```
 
-Think about this for a bit. If the Nasdaq price goes up two days in a row, the corresponding values in `follow` will be [...,`True`, `True`,...]. If the price went down for any two consecutuve days, the values would be [...,`False`, `False,...]. 
+Think about this for a bit. If the Nasdaq price goes up two days in a row, the corresponding values in `follow` will be [...,`True`, `True`,...]. If the price went down for any two consecutuve days, the values would be [...,`False`, `False`,...]. 
 
-Finally, we want to assess how often either these consective True or Falsevalues appear. To do that we will run the following code. This uses one new piece of systax: in Python `==` means 'is equal to to'. 
+Finally, we want to assess how often either these consective True or False values appear. To do that we will run the following code. This uses one new piece of systax: in Python `==` means 'is equal to to'. 
 
 ```python
 seq = follow[:-1] == follow[1:]
 ```
 
-To reiterate, `seq` will contaian return `True ` if Yesterday's price _change_ was the same as _today's_ price change, otherwise return `False`. Once again these values are assigned to a new variable, called `seq
+To reiterate, `seq` will contaian return `True ` if Yesterday's price _change_ was the same as _today's_ price change, otherwise return `False`. Once again these values are assigned to a new variable, called `seq`.
 
 ## Challenge
 
