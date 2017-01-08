@@ -1,4 +1,4 @@
-#Numpy
+#Data wrangling with Python / Numpy
 
 
 ## Introduction
