@@ -33,9 +33,10 @@ Finally, the introduction should end with a contents page listing how the rest o
 ## Context
 
 
-#### python terms
+#### glossary
 
 * Library (e.g Numpy)
+* Jupyter notebook
 * Variable
 * Function
 * Boolean
@@ -59,9 +60,9 @@ First we're going need to meet Numpy, and learn the basics of accessing, and que
 
 ## Running Python
 
-We assume that you are running this code from the notebooks directory of this book. The easiest (although not necessarily the most robust) way of running the code is to Launch a notebook using the _mybinder_ service. Unless otehrwise instructed, try clicking on this [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dansand/reschapter) link, which should open a Python session in the form of a Jupyter notebook. 
+We assume that you are while reading this chapter, you will be able to simultaneously run the code. For this purpose we have set up a Jupyer notebook through the _mybinder_ service. Unless otherwise instructed, try clicking on this [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dansand/reschapter) link, which should open a Python session in the form of a Jupyter notebook. 
 
-There are a minimal set of instructions within your Jupyer notebook to getr you up and running. In devising this lesson, we assume that there will be some instructors available for trouble-shooting.  
+There are a minimal set of instructions within your Jupyer notebook to get you up and running. In devising this lesson, we assume that there will be some instructors available for trouble-shooting.  
 
 
 ## Numpy
