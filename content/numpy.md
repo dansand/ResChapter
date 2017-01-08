@@ -90,10 +90,12 @@ __Example of 2-D array__
    └───┴───┴───┘
 ```
 
-We are going to hit the ground running and import some numerical data. In this case, we have a csv (comma separated variable) file containing historical price and volume data from the Nasdaq Stock Exchange (to be precise, the Nasdaq Composite index). This tutorial assumes the data is located in the followinf _relative path_: `../data/nasdaq.csv`.
+At this point you may wonder _is this it?_ Of course, Numpy is not just numbers in grid form. As we we see, it is also a set of syntax and function to very concisely and efficiently, wrangle, query and analyse those stored numbers. 
 
 
 #### importing data
+
+We are going to dive right in and import some quantitative data. In this case, we have a csv (comma separated variable) file containing historical price and volume data from the Nasdaq Stock Exchange (to be precise, the Nasdaq Composite index). This tutorial assumes the data is located in the followinf _relative path_: `../data/nasdaq.csv`.
 
 ```python
 numpy.loadtxt('../data/nasdaq.csv')
