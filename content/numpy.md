@@ -322,6 +322,7 @@ data.mean()
 ```
 
 So what about that output, an array of True and ad False values? In plain English, the code `data > data.mean()`,  could be stated as 'is the value(s) of `data` bigger than the mean value of the data'. Numpy interprets this element-by-element, and returns
+
 * `True` if an an element / value is greater than data.mean()
 * `False` if an element / value is smaller. An array of "true" and `False` is called a Boolean array.
 
@@ -343,12 +344,15 @@ Now we can check how many values in our dataset are greater than the mean.
 len(data[data > data.mean()])
 ```
 
+```
+4789
+```
 
-## Challenge
+#The final flourish
 
-First off, remember that our `data` array contains the daily closing price for the Nasdaq. We are interested in the overall frequency with which today's closing price _change_ follows yesterday's.
+Once again, remember that our `data` array contains the daily closing price for the Nasdaq Compisite Index. We are interested in the overall frequency with which today's closing price _change_ follows yesterday's.
 
-Tthe following line code will return a Numpy array. That array will have one of two values: `True` if todays price `data[1:]` is greater than yesterday's `data[:-1]`; otherwise `False`. The array containing these True and False values are assinged to the new array which we have called `follow`.
+The following line code will return a Numpy array. That array will have one of two values: `True` if todays price `data[1:]` is greater than yesterday's `data[:-1]`; otherwise `False`. The array containing these True and False values are assinged to the new array which we have called `follow`.
 
 ```python
 follow = data[:-1] < data[1:]
@@ -358,6 +362,8 @@ Okay, nearly there. This last line of code forms yet another array, containing `
 ```python
 seq = follow[:-1] == follow[1:]
 ```
+
+## Challenge
 
 Your challenge is to combine the following two Python expressions to answer the question what is the overall frequency with which today's closing price _change_ follows yesterday's.
 
