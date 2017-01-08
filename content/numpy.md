@@ -101,7 +101,7 @@ array([ 5249.899902,  5227.209961,  5213.220215, ...,   100.760002,
 
 The expression `numpy.loadtxt` is a _function call_ that asks Python to run the function `loadtxt` that belongs to the `numpy` library.
 
-These values Python returned to us represent the __daily closing price for the Nasdaq composite index__ for a certain number of days. For simplicity we won't worry about the specific dates for this excercise.
+When we execucted this code, Python returned a set of numbers to us, enclosed in brackets and preceeded by the word _array_. The numbers are the data from the csv file, representing the __daily closing price for the Nasdaq composite index__ for a certain number of days. For simplicity we won't worry about the specific dates for this excercise. The word array is shown because we the `numpy.loadtxt` function constructs a specific type of object called an array. 
 
 #### numpy arrays as variables
 
@@ -125,6 +125,8 @@ plt.plot(data)
 
 ![Alt](../figs/nasdaq.png "Nasdaq data (backwards)")
 
+
+If you're clued into the U.S stockmarket, you'll notice that our data is backwards. This is simply because the data in csv format was ordered by most-recent first. We can easily reverse the data,  but as it will not affect our analysis, we won't bother doing so now. 
 
 The total number of data points (days) can be found by running:
 
