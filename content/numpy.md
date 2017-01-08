@@ -72,6 +72,16 @@ __Example of 1-D array__
 
 __Example of 2-D array__
 
+```
+   ┌───┬───┬───┐
+   │ 4 │ 5 │ 7 │
+   ├───┼───┼───┤
+   │ 0 │ 2 │ 6 │
+   ├───┼───┼───┤
+   │ 8 │ 4 │ 0 │
+   └───┴───┴───┘
+```
+
 We are going to hit the ground running and import some numerical data. In this case, we have a csv (comma separated variable) file containing historical price and volume data from the Nasdaq Stock Exchange (to be precise, the Nasdaq Composite index). This tutorial assumes the data is located in the followinf _relative path_: `../data/nasdaq.csv`.
 
 We assume that you are running this code from the notebooks directory of this book. The easiest (although not necessarily the most robust) way of running the code is to Launch a notebook using the mybinder service. We also provide instructions (links) at the bottom of this document to assist with installing your own version of Python.
