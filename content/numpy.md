@@ -261,7 +261,7 @@ print(indices)
 array([  1,  44, 722])
 ```
 
-Now the fun begins! Let's try slicing our `data` array with our `indices` array:
+So let's try slicing our `data` array with our `indices` array:
 
 ```python
 data[indices]
@@ -283,21 +283,21 @@ len(data)
 ```
 
 ```python
-len(data[indicis])
+len(data[indices])
 ```
 ```
 3
 ```
-So, out original numpy array had 11496 elements, while the sliced array has 3 - like we wanted.
+Hopefully it's clear that this means our original `data` numpy array had 11496 elements, while the sliced array has just 3.
 
 #### tricks together
 
-Sp now we know about doing maths and slices. Let's see how these combine. Say we have an arbitrary array called u then the meaning of the expression u[1:] - u[:-1] is demonstrated in the following figure:
+So now we know about doing maths and slices. Let's see how these techniques combine. Say we have an arbitrary array called `u` then the meaning of the expression `u[1:] - u[:-1]` is demonstrated in the following figure:
 
 
 ![Alt](../figs/vectorized_diff.png "difference")
 
-The array that results from  u[1:] - u[:-1] is the nth + 1 element of u minus the nth element. Necessarily, output array is one element shorter that u (we loose one element of overlap when we offset)
+The array that results from  `u[1:] - u[:-1]` is the nth + 1 element of u minus the nth element. Necessarily, output array is one element shorter that u (we loose one element of overlap when we offset)
 
 
 
