@@ -3,19 +3,20 @@
 
 ## Introduction
 
+Python is a _simple general-purpose programming language_. As such, Python is not tied to a specific task or discipline, but is widely used for processing and analyising text, numbers, images, building websites and applications, and increasingly in machine learning and data science. 
 
-Python is a _simple general-purpose programming language_. As such, Python is not tied to a specific task or discipline, but is widely used for processing and analyising text, numbers, images, building websites and applications, and increasingly in machine learnign and data science. 
-
-Python was first created by Guido von Rossum in 1990 and was named after Monty Python's Flying Circus. It has since been developed by a large team of volunteers and is freely available from the Python Software Foundation. That's right, Python is free. More than that, Python has a strong ties to the open source movement. This means there is a culture of sharing and support within the Python 'ecosystem'.
+Python was created by Guido van Rossum in 1990, its namesake being Monty Python's Flying Circus. It is now developed by a large team of volunteers and is freely available from the Python Software Foundation. That's right, Python is free! More than that, Python has a strong ties to the open source movement. This means there is a culture of sharing and support within the Python 'ecosystem'.
 
 Python, Matlab, or R (or Java, C++, ...)? There are a lot of programming languages, and many tasks - such as the one demonstrated in this chapter - can be completed equally well in all of them. So how to decide? In our group, some researchers chose Python because it was stronger in discipline-specific Libraries than any of it's competetors (for instance Neuroscience, Geophysics). However, for those of us had also dabled in other languages first (e.g. Matlab, R), and found that there was litte 'wasted' effort in switching. Many core concepts extend across all languages, not to mention the more ephemeral skill of 'thinking like a programmer'.
 
-## Learning Objectives:
+Finally, the introduction should end with a contents page listing how the rest of the chapter will flow.
 
 
-In this chapter we're going to look a Python library called Numpy (numeric Python). A library is group of tools (code) designed to assist a common purpose, yet outside the `core` capabilities of the Langauge. Numpy provides the ability to work with structured groups of numbers (arrays). Depending on the situation, these could represent vectors, time series, tables, grids, matrices, etc.
+### Learning Objectives:
 
-Using Numpy we're going to tackle a simple data science problem, yet one that has some profound implications. If you are new to Python and Numpy, uur main suggestion is to __try to understand and keep the data science problem in mind__. Hopefully, if you have a good handle on the problem itself, the utility of Python / Numpy will be self evident.
+In this chapter we're going to look a Python library called Numpy (numeric Python). A library is group of tools (code) designed to assist a common purpose, yet somehow outside the `core` capabilities of the Langauge. Numpy provides the ability to work with structured groups of numbers (arrays). Depending on the situation, these could represent individual measurements, vectors, time series, tables, grids, matrices, etc.
+
+Using Numpy we're going to tackle a simple data science problem, yet one that has some profound implications. If you are new to Python and Numpy, our main suggestion is to __try to understand and keep the data science problem in mind__. Hopefully, if you have a good handle on the problem itself, the utility and efficiency of Python / Numpy will be apparent.
 
 
 While you won't finish this chapter a fully-fledged Python programmer, we hope that you will get a sense of the 'flavour' of how Python works. Don't get too concerned about understanding _every_ piece of code that's written, but instead try to focus on how the programming approach to the __data science problem__ differs from a workflow you might develop using a spreadsheet or application (for instance Excel or SPSS).
@@ -24,16 +25,11 @@ Necessarily, we will introduce some extraneous concepts and terms, that we don't
 
 By the end of this chapter you will learn:
 
-1. Why structured, numeric data is relevant.
-2. How to import, wrangle, and query structured, numeric data, using Python/Numpy
-3. The 'flavour' of using Python/Numpy for a data science problem.
-
-Finally, the introduction should end with a contents page listing how the rest of the chapter will flow.
-
-## Context
+1. How to import, wrangle, and query structured, numeric data, using Python/Numpy.
+2. The 'flavour' of using Python/Numpy for a data science workflow.
 
 
-#### glossary
+### glossary
 
 * Library (e.g Numpy)
 * Jupyter notebook
@@ -46,7 +42,7 @@ Finally, the introduction should end with a contents page listing how the rest o
 * Method
 
 
-## A data science problem
+### A data science problem
 
 Our example looks at a real (data) science problem. In fact, we are going to to endeavour to _falsify_ a hypothesis.
 We'll try to show that there _are_ predictable patterns in day-to-day stockmarket data, a discovery which would contradict the _efficient market hypothesis_. 
@@ -58,12 +54,11 @@ _Remember, this is one example out of a vast number of problems that we could ha
 
 First we're going need to meet Numpy, and learn the basics of accessing, and querying structured, numeric data.
 
-## Running Python
+### Running Python
 
-We assume that you are while reading this chapter, you will be able to simultaneously run the code. For this purpose we have set up a Jupyer notebook through the _mybinder_ service. Unless otherwise instructed, try clicking on this [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dansand/reschapter) link, which should open a Python session in the form of a Jupyter notebook. 
+Our intention is that while reading this chapter, you will be able to simultaneously run and edit the code we discuss. For this purpose we have set up a Jupyer notebook through the _mybinder_ service. Unless other options are available to you, try clicking on this [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dansand/reschapter) link, which should open a Python session in the form of a Jupyter notebook. 
 
-There are a minimal set of instructions within your Jupyer notebook to get you up and running. In devising this lesson, we assume that there will be some instructors available for trouble-shooting.  
-
+There are a minimal set of instructions within your Jupyer notebook to get you up and running. In devising this lesson, we do assume that there will be some instructors available for trouble-shooting.  
 
 ## Numpy
 
@@ -93,7 +88,7 @@ __Example of 2-D array__
 At this point you may wonder _is this it?_ Of course, Numpy is not just numbers in grid form. As we we see, it is also a set of syntax and function to very concisely and efficiently, wrangle, query and analyse those stored numbers. 
 
 
-#### importing data
+### importing data
 
 We are going to dive right in and import some quantitative data. In this case, we have a csv (comma separated variable) file containing historical price and volume data from the Nasdaq Stock Exchange (to be precise, the Nasdaq Composite index). This tutorial assumes the data is located in the followinf _relative path_: `../data/nasdaq.csv`.
 
@@ -110,7 +105,7 @@ The expression `numpy.loadtxt` is a _function call_ that asks Python to run the 
 
 When we execucted this code, Python returned a set of numbers to us, enclosed in brackets and preceeded by the word _array_. The numbers are the data from the csv file, representing the __daily closing price for the Nasdaq composite index__ for a certain number of days. For simplicity we won't worry about the specific dates for this excercise. The word array is shown because we the `numpy.loadtxt` function constructs a specific type of object called an array. 
 
-#### numpy arrays as variables
+### numpy arrays as variables
 
 We can also assign an numpy array to a variable using the same syntax.  Let's re-run `numpy.loadtxt` and save its result:
 
@@ -150,7 +145,7 @@ We say that the variable we named `data` has an _attribute_ called _shape_. The 
 
 
 
-#### maths with arrays
+### maths with arrays
 
 A great feature of numpy arrays is that we can do maths with entire arrays at once. Let's see this by running some code:
 
@@ -183,7 +178,7 @@ data - data
 array([ 0.,  0.,  0., ...,  0.,  0.,  0.])
 ```
 
-#### indexing
+### indexing
 
 If we want to get a single number from the array, we provide the number that represents the position of the element in teh array. This number is known as the _index_, and we refer to this process as _indexing_. When indexing an array, we provide the index in square brackets immediately after the _variable_ that represtents the Numpy array:
 
@@ -222,7 +217,7 @@ Okay, if you've got this far well done! We just introduced a whole heap of conce
 * passed our variable to a different fucntion to create  quick plot.
 * learnt how to access a _single_ element of our Numpy array using _indexing_. 
 
-#### slicing and dicing
+### slicing and dicing
 
 Beyond indexing, we need a way to extract whole sections of data at once. This is called a _slice_. For example, to select the first ten days of our `data` array, we could do:
 
@@ -254,10 +249,10 @@ onetwothree[0:2]
 
 There are a couple of handy shortcuts with slices. First, if you omit of the element indexes on either side of the colon, it defaults, to the start / end of the array. Hence `data[0:10] <=> data[:10]`.
 
-Also, negative indexes visit the elements in reverse order. Given this, which element would we be referring to when we write `data[-1]`? How about using `data[-3]``?
+Also, negative indexes visit the elements in reverse order. Given this, which element would we be referring to when we write `data[-1]`? How about using `data[-3]`?
 
 
-#### slicing one array with another
+### slicing one array with another
 
 Slicing gets a little fancier when we use one numpy array to slice another. Let's create a simple array with some integer values
 
@@ -280,7 +275,7 @@ data[indices]
 array([ 5227.209961,  4862.569824,  3929.570068])
 ```
 
-While it might not be immediately obvious, this returned the values of the `data` array, where the elements numbers (indexes) werer provided by the array `indices` (a numpy array we stored in a variable called `indices`)
+While it might not be immediately obvious, our code returned the values of the `data` array, but only those elements correspoding to the indexes provided by the array `indices` (a numpy array we stored in a variable called `indices`)
 
 One way we could check this is by passing both the original and sliced arrays into the Python function `len()` (length):
 
@@ -299,7 +294,7 @@ len(data[indices])
 ```
 Hopefully it's clear that this means our original `data` numpy array had 11496 elements, while the sliced array has just 3.
 
-#### tricks together
+### composing the tricks
 
 So now we know about doing maths and slices. Let's see how these techniques combine. Say we have an arbitrary array called `u` then the meaning of the expression `u[1:] - u[:-1]` is demonstrated in the following figure:
 
@@ -308,7 +303,7 @@ So now we know about doing maths and slices. Let's see how these techniques comb
 The array that results from  `u[1:] - u[:-1]` is the nth + 1 element of u minus the nth element. Necessarily, output array is one element shorter that u (we loose one element of overlap when we offset)
 
 
-#### asking questions / boolean arrays
+### asking questions / boolean arrays
 
 Now we go up a gear. Frequently, we are going to want to ask quantitative questions about our data. Consider the following expression, and its output:
 
@@ -399,7 +394,9 @@ Your challenge is to combine the following two Python expressions to answer the 
 seq.sum(), len(data)
 ```
 
-## End game
+## Summary
+
+### What just happened?
 
 Summarise the main learning objectives/ key points covered in your chapter. These are different from the Learning Objectives where you assume no knowledge. Here you can assume knowledge gained after reading your chapter.
 
@@ -408,15 +405,15 @@ a)
 b)
 c)
 
-## Links
+### Links
 
 Where to next? Give the reader some guide to find more information or how to build on this knowledge. Attach a ‘resource pack’ (YouTube links), contact details and so on.
 
-## Further analysis
+### Further analysis
 
 See the github repo for a more rigourous statistical test
 
-## Notes
+### Notes
 
 Numpy vs np
 
@@ -429,4 +426,4 @@ After a bit more Python training, you will understand that in writing `data.mean
 
 Installing Python
 
-## Bibliography
+### Bibliography
