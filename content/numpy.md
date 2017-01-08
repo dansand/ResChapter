@@ -85,12 +85,12 @@ __Example of 2-D array__
    └───┴───┴───┘
 ```
 
-At this point you may wonder _is this it?_ Of course, Numpy is not just numbers in grid form. As we we see, it is also a set of syntax and function to very concisely and efficiently, wrangle, query and analyse those stored numbers. 
+Of course, Numpy is not just numbers in grid form. As we we see, it is also a set of syntax and functions to concisely and efficiently, wrangle, query and analyse stored numbers. 
 
 
 ### importing data
 
-We are going to dive right in and import some quantitative data. In this case, we have a csv (comma separated variable) file containing historical price and volume data from the Nasdaq Stock Exchange (to be precise, the Nasdaq Composite index). This tutorial assumes the data is located in the followinf _relative path_: `../data/nasdaq.csv`.
+We are going to dive right in and import some quantitative data. In this case, we have a csv (comma separated variable) file containing historical price and volume data from the Nasdaq Stock Exchange (to be precise, the Nasdaq Composite index). This tutorial assumes the data is located in the followinf _relative path_: `data/nasdaq.csv`.
 
 ```python
 numpy.loadtxt('../data/nasdaq.csv')
@@ -103,22 +103,19 @@ array([ 5249.899902,  5227.209961,  5213.220215, ...,   100.760002,
 
 The expression `numpy.loadtxt` is a _function call_ that asks Python to run the function `loadtxt` that belongs to the `numpy` library.
 
-When we execucted this code, Python returned a set of numbers to us, enclosed in brackets and preceeded by the word _array_. The numbers are the data from the csv file, representing the __daily closing price for the Nasdaq composite index__ for a certain number of days. For simplicity we won't worry about the specific dates for this excercise. The word array is shown because we the `numpy.loadtxt` function constructs a specific type of object called an array. 
+When we execucted this code, Python returned a set of numbers to us, enclosed in brackets and preceeded by the word _array_. The numbers are the data from the csv file, representing the __daily closing price for the Nasdaq composite index__ for a certain number of days. For simplicity we won't worry about the specific dates for this excercise. The word array is shown because when the `numpy.loadtxt` function reads our text file, it constructs a specific type of object called an array. 
 
 ### numpy arrays as variables
 
-We can also assign an numpy array to a variable using the same syntax.  Let's re-run `numpy.loadtxt` and save its result:
+We can also assign a numpy array to a _variable_.  Let's re-run `numpy.loadtxt` and save its result:
 
 ```python
 data = numpy.loadtxt('../data/nasdaq.csv')
 ```
 
-The key thing you need to understand is taht when we create a varible (usinf the `=` sign), the object on thr RHS of the `=` is now assigned to the varibale name. The object (in this case an array of numbers) gets stired in memory, and the name we _chose_ for our variable becomes the object that we work with. This might be easier to see in the following piece od code, where we plot the contents of our `data` variable.
+When we create a varible (using the `=` sign), the object on thr RHS of the `=` is now assigned to the variable name. The object (in this case an array of numbers) gets stored in memory, and the name we _chose_ for our variable becomes the object that we work with. Let's plot the variable `data`, to reassure ourselves that it 'contains' our numbers. 
 
-A couple of introductions to variables can be found here...
-
-
-The following lines will produce a simple plot of the the data. The only thing you need to understand here is that there is a pythin function called `plt.plot` that generates plots. To actually use this fucntion we have to hand it an object to plot. In this case it was our varible (our Numpy array) called data. 
+The following lines will produce a simple plot of the the data. The only thing you need to understand here is that there is a python function called `plt.plot` that generates plots. To actually use this function we have to hand it an object to plot. In this case it was our variable (our Numpy array) called `data`. 
 
 ```python
 %pylab inline
@@ -143,11 +140,9 @@ data.shape
 We say that the variable we named `data` has an _attribute_ called _shape_. The `.shape` attrubute can be called for any Numpy array; it will return the number of data points (elements) in each dimension. In this case there is 1 dimension, with `11496` elements, each representing a single day.
 
 
-
-
 ### maths with arrays
 
-A great feature of numpy arrays is that we can do maths with entire arrays at once. Let's see this by running some code:
+A useful feature of Numpy arrays is that we can do maths with entire arrays at once. Let's see this by running some code:
 
 ```python
 data*2
@@ -180,7 +175,7 @@ array([ 0.,  0.,  0., ...,  0.,  0.,  0.])
 
 ### indexing
 
-If we want to get a single number from the array, we provide the number that represents the position of the element in teh array. This number is known as the _index_, and we refer to this process as _indexing_. When indexing an array, we provide the index in square brackets immediately after the _variable_ that represtents the Numpy array:
+If we want to get a single number from the array, we provide the number that represents the position of the element in the array. This number is known as the _index_, and we refer to this process as _indexing_. When indexing an array, we provide the index in square brackets immediately after the _variable_ that represents the Numpy array:
 
 ```python
 data[0]
@@ -197,7 +192,7 @@ print('first value in data:', data[0])
 ('first value in data:', 5249.8999020000001)
 ```
 
-A more general view of the process of indexing is shown in the following schematic:
+the process of indexing is shown in the following schematic:
 
 ```
 onetwothree = numpy.arange(3)
@@ -252,48 +247,6 @@ There are a couple of handy shortcuts with slices. First, if you omit of the ele
 Also, negative indexes visit the elements in reverse order. Given this, which element would we be referring to when we write `data[-1]`? How about using `data[-3]`?
 
 
-### slicing one array with another
-
-Slicing gets a little fancier when we use one numpy array to slice another. Let's create a simple array with some integer values
-
-```python
-indices = np.array([1,44,722])
-print(indices)
-```
-
-```
-array([  1,  44, 722])
-```
-
-So let's try slicing our `data` array with our `indices` array:
-
-```python
-data[indices]
-```
-
-```
-array([ 5227.209961,  4862.569824,  3929.570068])
-```
-
-While it might not be immediately obvious, our code returned the values of the `data` array, but only those elements correspoding to the indexes provided by the array `indices` (a numpy array we stored in a variable called `indices`)
-
-One way we could check this is by passing both the original and sliced arrays into the Python function `len()` (length):
-
-```python
-len(data)
-```
-```
-11496
-```
-
-```python
-len(data[indices])
-```
-```
-3
-```
-Hopefully it's clear that this means our original `data` numpy array had 11496 elements, while the sliced array has just 3.
-
 ### composing the tricks
 
 So now we know about doing maths and slices. Let's see how these techniques combine. Say we have an arbitrary array called `u` then the meaning of the expression `u[1:] - u[:-1]` is demonstrated in the following figure:
@@ -324,21 +277,33 @@ data.mean()
 1336.6577597914056
 ```
 
-So what about that output, an array of True and ad False values? In plain English, the code `data > data.mean()`,  could be stated as 'is the value(s) of `data` bigger than the mean value of the data'. Numpy interprets this element-by-element, and returns
+So what about that output, an array of True and ad False values? In plain English, the code `data > data.mean()`,  could be stated as 'are the values of `data` greater than the mean value of the data'. Numpy interprets this element-by-element, and returns
 
 * `True` if an an element / value is greater than data.mean()
-* `False` if an element / value is smaller. An array of "true" and `False` is called a Boolean array.
+* `False` if an element / value is smaller. 
+
+An array of containing these "True" and `False` is called a Boolean array.
 
 The kicker is that we can slice the original array, by this Boolean array:
 
 ```python
-data[data > data.mean()]
+ba = data > data.mean()
+data[ba]
 ```
 
 ```
 array([ 5249.899902,  5227.209961,  5213.220215, ...,  1349.050049,
         1340.459961,  1346.359985])
 ```
+
+len(data[ba])
+```
+
+```
+4789
+```
+
+
 
 Now we can check how many values in our dataset are greater than the mean.
 
@@ -350,17 +315,7 @@ len(data[data > data.mean()])
 4789
 ```
 
-This process may be more clear if we break it apart a bit by creating an intermediary array. 
 
-```python
-ba = data > data.mean()
-
-len(data[ba])
-```
-
-```
-4789
-```
 
 Here explicity created an array `ba` to store the boolean values (`True` `False `) rather using them implicity. 
 
