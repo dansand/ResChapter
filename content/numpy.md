@@ -277,7 +277,7 @@ data > data.mean()
 ```
 
 ```
-array([ True,  True,  True, ..., False, False, False], dtype=bool)
+array([False, False, False, ...,  True,  True,  True], dtype=bool)
 ```
 We know what `data` is. The new parts here are the `>` symbol and the strange `data.mean()` object.  You may guess that `>` is similar to the mathematical _greater than_ operator.  The expression `data.mean()` simply returns the mean of the data array. So `data.mean()` simply stands for a number - the arithmetic mean of the dataset. To test this, try running `data.mean()` by itself.
 
@@ -302,8 +302,8 @@ data[ba]
 ```
 
 ```
-array([ 5249.899902,  5227.209961,  5213.220215, ...,  1349.050049,
-        1340.459961,  1346.359985])
+array([ 1346.359985,  1340.459961,  1349.050049, ...,  5213.220215,
+        5227.209961,  5249.899902])
 ```
 
 Now we can check how many values in our dataset are greater than the mean:
@@ -321,7 +321,7 @@ len(data[ba])
 
 Before we put together our analysis, recall that our `data` array contains the daily closing price for the Nasdaq Composite Index, and that we are interested in the overall frequency with which today's closing price _change_ follows yesterday's.
 
-The following line code combines all the Python/Numpy skills we have developed. Running this code will return a Numpy array which will have one of two values: `True` if one day's price (`data[1:]`) is greater than the previous day's price `data[:-1]`; otherwise `False`. These True and False values are assigned to the new array which we have called `follow`.
+The following line code combines all the Python / Numpy skills we have developed. Running this code will return a Numpy array which will have one of two values: `True` if one day's price (`data[1:]`) is greater than the previous day's price `data[:-1]`; otherwise `False`. These True and False values are assigned to the new array which we have called `follow`.
 
 ```python
 follow = data[:-1] < data[1:]
@@ -339,7 +339,7 @@ To reiterate, `seq` will contaian return `True ` if Yesterday's price _change_ w
 
 ## Challenge
 
-Your challenge is to combine the following two Python expressions to answer the question __what is the overall frequency with which one day's closing price _change_ follows the previous day's__. You just need to combine the two expressions with one of the Python mathermatical operators ('+', '-', '/').
+Your challenge is to understand the meaning and then combine the following two Python expressions to answer the question __what is the overall frequency with which one day's closing price _change_ follows the previous day's__. You simply need to combine the two expressions with one of the Python mathermatical operators ('+', '-', '/').
 
 ```python
 seq.sum(), len(data)
