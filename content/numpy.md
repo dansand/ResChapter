@@ -149,8 +149,8 @@ data*2
 ```
 
 ```
-array([ 10499.799804,  10454.419922,  10426.44043 , ...,    201.520004,
-          201.679992,    200.      ])
+array([   200.      ,    201.679992,    201.520004, ...,  10426.44043 ,
+        10454.419922,  10499.799804])
 ```
 
 Python returned 2  times each element of the original array, as does:
@@ -160,8 +160,8 @@ data + data
 ```
 
 ```
-array([ 10499.799804,  10454.419922,  10426.44043 , ...,    201.520004,
-          201.679992,    200.      ])
+array([   200.      ,    201.679992,    201.520004, ...,  10426.44043 ,
+        10454.419922,  10499.799804])
 ```
 
 And a final check:
@@ -189,7 +189,7 @@ print('first value in data:', data[0])
 ```
 
 ```
-('first value in data:', 5249.8999020000001)
+('first value in data:', 100.0)
 ```
 
 the process of indexing is shown in the following schematic:
@@ -210,7 +210,7 @@ What about if we wanted the last value in our array? The index scheme 'wraps aro
 print('last value in data:', data[-1])
 ```
 ```
-('last value in data:', 100.0)
+('last value in data:', 5249.8999020000001)
 ```
 
 Okay, if you've got this far well done! We just introduced a whole heap of concepts, at a pace that may have left you somewhat overwhelmed! Let's briefly summarise what we just did:
@@ -226,19 +226,15 @@ Okay, if you've got this far well done! We just introduced a whole heap of conce
 Beyond indexing, we need a way to extract whole sections of data at once. This is called a _slice_. For example, to select the first ten days of our `data` array, we could do:
 
 ```python
-data[0:10]
+data[0:5]
 ```
 ```
-array([ 5249.899902,  5227.209961,  5213.220215,  5222.990234,
-        5232.330078,  5218.919922,  5212.200195,  5217.689941,
-        5260.080078,  5244.600098])
+array([ 100.      ,  100.839996,  100.760002,  100.690002,  101.449997]
 ```
 
-So the slice `[0:10]` means start at elemnent / index 0, and go up to (but not including) elemnent / index 10.
+So the slice `[0:5]` means start at elemnent / index 0, and go __up to but not including__ elemnent / index 10.
 
-The up to (but not including), is simply a decision the engineers made when writing the library, as was the decision to start counting at 0. Feel free to love / hate these conventions.
-
-A more general view of the process of _slicing_ is shown in the following schematic:
+The up to (but not including), is simply a decision the engineers made when writing the library, as was the decision to start counting at 0. Feel free to love / hate these conventions. Another view of the process of _slicing_ is shown in the following schematic:
 
 ```
 onetwothree = numpy.arange(3)
@@ -250,11 +246,7 @@ onetwothree[0:2]
 
 ```
 
-
-There are a couple of handy shortcuts with slices. First, if you omit of the element indexes on either side of the colon, it defaults, to the start / end of the array. Hence `data[0:10] <=> data[:10]`.
-
-Also, negative indexes visit the elements in reverse order. Given this, which element would we be referring to when we write `data[-1]`? How about using `data[-3]`?
-
+There are a couple of handy shortcuts with slicing. First, if you omit one the numbers on either side of the colon, it defaults, to the start / end of the array. Hence `data[0:10] <=> data[:10]`.
 
 ### combining our tricks
 
