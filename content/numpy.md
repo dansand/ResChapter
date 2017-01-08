@@ -256,9 +256,9 @@ So now we know about doing maths and slices. Let's see how these techniques comb
 The array that results from  `u[1:] - u[:-1]` is the nth + 1 element of u minus the nth element. Necessarily, output array is one element shorter that u (we loose one element of overlap when we offset)
 
 
-### asking questions / boolean arrays
+### asking questions
 
-Now we go up a gear. Frequently, we are going to want to ask quantitative questions about our data. Consider the following expression, and its output:
+Frequently, we are going to want to ask quantitative questions about our data. Consider the following expression, and its output:
 
 ```python
 data > data.mean()
@@ -267,7 +267,7 @@ data > data.mean()
 ```
 array([ True,  True,  True, ..., False, False, False], dtype=bool)
 ```
-We know what `data` is. The new parts here are the `>` symbol and the strange `data.mean()` thingo.  You may guess that `>` is similar to the mathematical _greater than_ operator. Well done. The expression `data.mean()` simply returns the mean of the data array. So `data.mean()` simply stands for a number - the mean of the dataset. To test this, try running `data.mean()` by itself.
+We know what `data` is. The new parts here are the `>` symbol and the strange `data.mean()` expression.  You may guess that `>` is similar to the mathematical _greater than_ operator.  The expression `data.mean()` simply returns the mean of the data array. So `data.mean()` simply stands for a number - the mean of the dataset. To test this, try running `data.mean()` by itself.
 
 ```
 data.mean()
@@ -277,14 +277,12 @@ data.mean()
 1336.6577597914056
 ```
 
-So what about that output, an array of True and ad False values? In plain English, the code `data > data.mean()`,  could be stated as 'are the values of `data` greater than the mean value of the data'. Numpy interprets this element-by-element, and returns
+So what about that output, an array of True and False values? In plain English, the code `data > data.mean()`,  could be stated as 'are the values of `data` greater than the mean value of the data'. Numpy interprets this element-by-element, and returns
 
 * `True` if an an element / value is greater than data.mean()
 * `False` if an element / value is smaller. 
 
-An array of containing these "True" and `False` is called a Boolean array.
-
-The kicker is that we can slice the original array, by this Boolean array:
+An array of containing these "True" and `False` is called a Boolean array. The kicker is that we can _slice_ the original array, by this Boolean array:
 
 ```python
 ba = data > data.mean()
@@ -296,6 +294,11 @@ array([ 5249.899902,  5227.209961,  5213.220215, ...,  1349.050049,
         1340.459961,  1346.359985])
 ```
 
+
+
+Now we can check how many values in our dataset are greater than the mean.
+
+```python
 len(data[ba])
 ```
 
@@ -305,24 +308,10 @@ len(data[ba])
 
 
 
-Now we can check how many values in our dataset are greater than the mean.
-
-```python
-len(data[data > data.mean()])
-```
-
-```
-4789
-```
-
-
-
-Here explicity created an array `ba` to store the boolean values (`True` `False `) rather using them implicity. 
-
 
 #The final flourish
 
-Before we put together our analysis, remember that our `data` array contains the daily closing price for the Nasdaq Compisite Index. We are interested in the overall frequency with which today's closing price _change_ follows yesterday's.
+Before we put together our analysis, remember that our `data` array contains the daily closing price for the Nasdaq Composite Index. We are interested in the overall frequency with which today's closing price _change_ follows yesterday's.
 
 The following line code combines all the Pyton/Numpy skills we have developed. Runnign this code will return a Numpy array which will have one of two values: `True` if one day's price (`data[1:]`) is greater than the previous day's price `data[:-1]`; otherwise `False`. The array containing these True and False values are assinged to the new array which we have called `follow`.
 
