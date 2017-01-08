@@ -116,7 +116,6 @@ The key thing you need to understand is taht when we create a varible (usinf the
 A couple of introductions to variables can be found here...
 
 
-
 The following lines will produce a simple plot of the the data. The only thing you need to understand here is that there is a pythin function called `plt.plot` that generates plots. To actually use this fucntion we have to hand it an object to plot. In this case it was our varible (our Numpy array) called data. 
 
 ```python
@@ -244,16 +243,10 @@ onetwothree[0:2]
 ```
 
 
-There are a couple of handy shortcuts with slices. First, if you don't supply one of the indexes, either side of the colon, it defaults, to the start / end of the array. Hence `data[0:10] <=> data[:10]`.
+There are a couple of handy shortcuts with slices. First, if you omit of the element indexes on either side of the colon, it defaults, to the start / end of the array. Hence `data[0:10] <=> data[:10]`.
 
 Also, negative indexes visit the elements in reverse order. Given this, which element would we be referring to when we write `data[-1]`? How about using `data[-3]``?
 
-We'll demonstrate now, a trick we'll use later, the combining  of slices and maths (subtraction). Let's say we have an arbitrate array called u then the meaning of the expression u[1:] - u[:-1] is demonstrated in the following figure:
-
-
-![Alt](../figs/vectorized_diff.png "difference")
-
-The array that results from  u[1:] - u[:-1] is the nth + 1 element of u minus the nth element. Necessarily, output array is one element shorter that u (we loose one element of overlap when we offset)
 
 #### slicing one array with another
 
@@ -296,6 +289,16 @@ len(data[indicis])
 3
 ```
 So, out original numpy array had 11496 elements, while the sliced array has 3 - like we wanted.
+
+#### tricks together
+
+Sp now we know about doing maths and slices. Let's see how these combine. Say we have an arbitrary array called u then the meaning of the expression u[1:] - u[:-1] is demonstrated in the following figure:
+
+
+![Alt](../figs/vectorized_diff.png "difference")
+
+The array that results from  u[1:] - u[:-1] is the nth + 1 element of u minus the nth element. Necessarily, output array is one element shorter that u (we loose one element of overlap when we offset)
+
 
 
 #### asking questions / boolean arrays
