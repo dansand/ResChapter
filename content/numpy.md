@@ -1,23 +1,5 @@
 #Numpy
 
-```
-   ┏━━━┓───┬───┐   ┏━━━┓
-   ┃ 0 ┃ 1 │ 2 │ → ┃ 0 ┃ (scalar)
-   ┗━━━┛───┼───┤   ┗━━━┛
-   │ 3 │ 4 │ 5 │  
-   ├───┼───┼───┤
-   │ 6 │ 7 │ 8 │
-   └───┴───┴───┘
-```
-
-
-```
-  
-   ┌───┬───┬───┬───┬───┬───┬───┬───┬───┐
-   │ 0 │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │
-   └───┴───┴───┴───┴───┴───┴───┴───┴───┘
-
-```
 
 ## Introduction
 
@@ -77,9 +59,18 @@ First we're going need to meet Numpy, and learn the basics of accessing, and que
 
 ## Numpy
 
-What do we mean by structured, numeric data? Numpy arrays are tables of numbers. The tables of may look like sequences (1-D), grids (2-D), or hyper-grids (n-D). In this tutorial we'll deal only with 1-D Numpy arrays, which are just a sequence of numbers stretching along their single axis.  Think of these data as a time series, with `n` values (which we call the elements of the array).
+What do we mean by structured, numeric data? Numpy arrays are tables of numbers. The tables of may look like sequences (1-D), grids (2-D), or hyper-grids (n-D). In this tutorial we'll deal only with 1-D Numpy arrays, which are just a sequence of numbers stretching along their single axis.  Think of these data as a time series, with `n` values (which we call the elements of the array). A 1-D and 2-D array are shown below:
 
-Array Figures here...
+__Example of 1-D array__
+
+```
+   ┌──────┬──────┬──────┬──────┬──────┐
+   │ 0.00 │ 0.25 │ 0.50 │ 0.75 │ 1.00 │
+   └──────┴──────┴──────┴──────┴──────┘
+
+```
+
+__Example of 2-D array__
 
 We are going to hit the ground running and import some numerical data. In this case, we have a csv (comma separated variable) file containing historical price and volume data from the Nasdaq Stock Exchange (to be precise, the Nasdaq Composite index). This tutorial assumes the data is located in the followinf _relative path_: `../data/nasdaq.csv`.
 
