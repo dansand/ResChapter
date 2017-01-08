@@ -264,6 +264,17 @@ So now we know about doing maths and slices. Let's see how these techniques comb
 
 The array that results from  `u[1:] - u[:-1]` is the nth + 1 element of u minus the nth element. Necessarily, output array is one element shorter that u (we loose one element of overlap when we offset)
 
+```python
+u = numpy.arange(5)
+print(u)
+print(u[1:] - u[:-1])
+```
+
+```
+[0 1 2 3 4]
+[1 1 1 1]
+```
+
 
 ### asking questions
 
