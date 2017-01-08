@@ -4,7 +4,7 @@
 ## Introduction
 
 
-Python is a _simple general-purpose programming language_. As a general-purpose programming language it is not connected with a single task or discipline, howevever it is commonly used for processing text, numbers, images, scientific data, building websites and applications, and visualisation. It enjoys significant and growing popularity among the (data) scientific community.
+Python is a _simple general-purpose programming language_. As a general-purpose programming language it was not designed for a single task or discipline. However, Python is widely used for processing text, numbers, images, scientific data, building websites and applications, and increasingly in machine learnign and data science. 
 
 Python was first created by Guido von Rossum in 1990 and was named after Monty Python's Flying Circus. It has since been developed by a large team of volunteers and is freely available from the Python Software Foundation. That's right, Python is free. More than that, Python has a strong ties to the open source movement. This means there is a culture of sharing, cooperation and support.
 
@@ -101,7 +101,7 @@ array([ 5249.899902,  5227.209961,  5213.220215, ...,   100.760002,
 
 The expression `numpy.loadtxt` is a _function call_ that asks Python to run the function `loadtxt` that belongs to the `numpy` library.
 
-These values represent the __daily closing price for the Nasdaq composite index__ for a certain number of days; we don't kave those days (dates) available to use, and we don't need them for this excercise. 
+These values Python returned to us represent the __daily closing price for the Nasdaq composite index__ for a certain number of days. For simplicity we won't worry about the specific dates for this excercise.
 
 #### numpy arrays as variables
 
@@ -113,6 +113,10 @@ data = numpy.loadtxt('../data/nasdaq.csv')
 
 The key thing you need to understand is taht when we create a varible (usinf the `=` sign), the object on thr RHS of the `=` is now assigned to the varibale name. The object (in this case an array of numbers) gets stired in memory, and the name we _chose_ for our variable becomes the object that we work with. This might be easier to see in the following piece od code, where we plot the contents of our `data` variable.
 
+A couple of introductions to variables can be found here...
+
+
+
 The following lines will produce a simple plot of the the data. The only thing you need to understand here is that there is a pythin function called `plt.plot` that generates plots. To actually use this fucntion we have to hand it an object to plot. In this case it was our varible (our Numpy array) called data. 
 
 ```python
@@ -122,12 +126,25 @@ plt.plot(data)
 
 ![Alt](../figs/nasdaq.png "Nasdaq data (backwards)")
 
-A couple of introductions to variables can be found here...
+
+The total number of data points (days) can be found by running:
+
+```python
+data.shape
+```
+  
+```  
+(11496,)
+```
+
+We say that the variable we named `data` has an _attribute_ called _shape_. The `.shape` attrubute can be called for any Numpy array; it will return the number of data points (elements) in each dimension. In this case there is 1 dimension, with `11496` elements, each representing a single day.
+
+
 
 
 #### maths with arrays
 
-A great feature of numpy arrays is that we can do maths with entire arrays at once:
+A great feature of numpy arrays is that we can do maths with entire arrays at once. Let's see this by running some code:
 
 ```python
 data*2
@@ -138,7 +155,7 @@ array([ 10499.799804,  10454.419922,  10426.44043 , ...,    201.520004,
           201.679992,    200.      ])
 ```
 
-Returns 2  times each element of the original array, as does:
+Python returned 2  times each element of the original array, as does:
 
 ```python
 data + data
@@ -160,7 +177,7 @@ array([ 0.,  0.,  0., ...,  0.,  0.,  0.])
 
 #### indexing
 
-If we want to get a single number from the array, we provide the number that rrporesents the position of the element in teh array. This number is known as the _index_, and we refer to this process as _indexing_. When indexing an array, we provid the index in square brackets immediately after the _variable_ that represtents the Numpy array:
+If we want to get a single number from the array, we provide the number that represents the position of the element in teh array. This number is known as the _index_, and we refer to this process as _indexing_. When indexing an array, we provide the index in square brackets immediately after the _variable_ that represtents the Numpy array:
 
 ```python
 data[0]
@@ -177,7 +194,19 @@ print('first value in data:', data[0])
 ('first value in data:', 5249.8999020000001)
 ```
 
-Okay, if you;ve got this far well done! We just introduced a whole heap of concepts, at a pace that may have left you somewhat overwhelmed! Let's briefly summarise what we just did:
+A general view of the process of indexing is shown in the following schematic:
+
+```
+onetwothree = numpy.arange(3)
+onetwothree[0]
+
+   ┏━━━┓───┬───┐   ┏━━━┓
+   ┃ 0 ┃ 1 │ 3 │ → ┃ 0 ┃
+   ┗━━━┛───┴───┘   ┗━━━┛
+
+```
+
+Okay, if you've got this far well done! We just introduced a whole heap of concepts, at a pace that may have left you somewhat overwhelmed! Let's briefly summarise what we just did:
 
 * imported a python library named Numpy
 * used a _fucntion_ from Numpy to load a text file from out computer's filesystem
