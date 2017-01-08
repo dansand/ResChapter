@@ -35,8 +35,8 @@ By the end of this chapter you will learn:
 * Jupyter notebook
 * Variable
 * Function
-* Boolean
-* Elemeni
+* Boolean, True, False
+* Element
 * index
 * slice
 * Method
@@ -204,7 +204,7 @@ onetwothree[0]
 
 ```
 
-What about if we wanted the last value in our array? The index scheme 'wraps around' so that `[-1]` is the last value in the array, `[-2]` is teh second last etc. With `[0]` being the first value in teh array, this gives each element in the array two indexes we can use to index, i.e a positive and a negative. 
+What about if we wanted the last value in our array? The index scheme 'wraps around' so that `[-1]` is the last value in the array, `[-2]` is the second last etc. With `[0]` being the first value in teh array, this gives each element in the array two indexes we can use to index, i.e a positive and a negative. 
 
 ```python
 print('last value in data:', data[-1])
@@ -216,12 +216,12 @@ print('last value in data:', data[-1])
 Okay, if you've got this far well done! We just introduced a whole heap of concepts, at a pace that may have left you somewhat overwhelmed! Let's briefly summarise what we just did:
 
 * imported a python library named Numpy
-* used a _fucntion_ from Numpy to load a text file from out computer's filesystem
+* used a _function_ from Numpy to load a text file from out computer's filesystem
 * used _variable assignment_ to create a Pyth variale that represents (points to) our Numpy array. 
 * passed our variable to a different fucntion to create  quick plot.
 * learnt how to access a _single_ element of our Numpy array using _indexing_. 
 
-### slicing and dicing
+### slicing
 
 Beyond indexing, we need a way to extract whole sections of data at once. This is called a _slice_. For example, to select the first ten days of our `data` array, we could do:
 
@@ -287,7 +287,7 @@ data > data.mean()
 ```
 array([ True,  True,  True, ..., False, False, False], dtype=bool)
 ```
-We know what `data` is. The new parts here are the `>` symbol and the strange `data.mean()` expression.  You may guess that `>` is similar to the mathematical _greater than_ operator.  The expression `data.mean()` simply returns the mean of the data array. So `data.mean()` simply stands for a number - the mean of the dataset. To test this, try running `data.mean()` by itself.
+We know what `data` is. The new parts here are the `>` symbol and the strange `data.mean()` object.  You may guess that `>` is similar to the mathematical _greater than_ operator.  The expression `data.mean()` simply returns the mean of the data array. So `data.mean()` simply stands for a number - the arithmetic mean of the dataset. To test this, try running `data.mean()` by itself.
 
 ```
 data.mean()
@@ -297,7 +297,7 @@ data.mean()
 1336.6577597914056
 ```
 
-So what about that output, an array of True and False values? In plain English, the code `data > data.mean()`,  could be stated as 'are the values of `data` greater than the mean value of the data'. Numpy interprets this element-by-element, and returns
+So what about this strange output, which appears to be an array of _True_ and _False_ values? In plain English, the code `data > data.mean()`,  could be stated as 'are the values of `data` greater than the mean value of the data'. Numpy interprets this element-by-element, and returns
 
 * `True` if an an element / value is greater than data.mean()
 * `False` if an element / value is smaller. 
@@ -305,7 +305,7 @@ So what about that output, an array of True and False values? In plain English, 
 An array of containing these "True" and `False` is called a Boolean array. The kicker is that we can _slice_ the original array, by this Boolean array:
 
 ```python
-ba = data > data.mean()
+ba = data > data.mean() 
 data[ba]
 ```
 
@@ -314,9 +314,7 @@ array([ 5249.899902,  5227.209961,  5213.220215, ...,  1349.050049,
         1340.459961,  1346.359985])
 ```
 
-
-
-Now we can check how many values in our dataset are greater than the mean.
+Now we can check how many values in our dataset are greater than the mean:
 
 ```python
 len(data[ba])
@@ -327,19 +325,17 @@ len(data[ba])
 ```
 
 
-
-
 #The final flourish
 
 Before we put together our analysis, remember that our `data` array contains the daily closing price for the Nasdaq Composite Index. We are interested in the overall frequency with which today's closing price _change_ follows yesterday's.
 
-The following line code combines all the Pyton/Numpy skills we have developed. Runnign this code will return a Numpy array which will have one of two values: `True` if one day's price (`data[1:]`) is greater than the previous day's price `data[:-1]`; otherwise `False`. The array containing these True and False values are assinged to the new array which we have called `follow`.
+The following line code combines all the Pyton/Numpy skills we have developed. Running this code will return a Numpy array which will have one of two values: `True` if one day's price (`data[1:]`) is greater than the previous day's price `data[:-1]`; otherwise `False`. These True and False values are assigned to the new array which we have called `follow`.
 
 ```python
 follow = data[:-1] < data[1:]
 ```
 
-Think about this for a bit. If the Nasdaq price goes up tow days in a row, the corresponding values in `follow` will be [...,`True`, `True`,...]. If the price went down for any consectuve days, the values would be [...,`False`, `False,...]. 
+Think about this for a bit. If the Nasdaq price goes up two days in a row, the corresponding values in `follow` will be [...,`True`, `True`,...]. If the price went down for any two consecutuve days, the values would be [...,`False`, `False,...]. 
 
 Finally, we want to assess how often either these consective True or Falsevalues appear. To do that we will run the following code. This uses one new piece of systax: in Python `==` means 'is equal to to'. 
 
@@ -351,8 +347,7 @@ To reiterate, `seq` will contaian return `True ` if Yesterday's price _change_ w
 
 ## Challenge
 
-Your challenge is to combine the following two Python expressions to answer the question what is the overall frequency with which one day's closing price _change_ follows the previous days'. You simple need to combine the two expressions with one of the Python mathermatical operators ('+', '-', '/'). Good luck. 
-
+Your challenge is to combine the following two Python expressions to answer the question __what is the overall frequency with which one day's closing price _change_ follows the previous day's__. You just need to combine the two expressions with one of the Python mathermatical operators ('+', '-', '/').
 
 ```python
 seq.sum(), len(data)
