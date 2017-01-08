@@ -57,6 +57,13 @@ _Remember, this is one example out of a vast number of problems that we could ha
 
 First we're going need to meet Numpy, and learn the basics of accessing, and querying structured, numeric data.
 
+## Running Python
+
+We assume that you are running this code from the notebooks directory of this book. The easiest (although not necessarily the most robust) way of running the code is to Launch a notebook using the _mybinder_ service. Unless otehrwise instructed, try clicking on this [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dansand/reschapter) link, which should open a Python session in the form of a Jupyter notebook. 
+
+There are a minimal set of instructions within your Jupyer notebook to getr you up and running. In devising this lesson, we assume that there will be some instructors available for trouble-shooting.  
+
+
 ## Numpy
 
 What do we mean by structured, numeric data? Numpy arrays are tables of numbers. The tables of may look like sequences (1-D), grids (2-D), or hyper-grids (n-D). In this tutorial we'll deal only with 1-D Numpy arrays, which are just a sequence of numbers stretching along their single axis.  Think of these data as a time series, with `n` values (which we call the elements of the array). A 1-D and 2-D array are shown below:
@@ -84,9 +91,6 @@ __Example of 2-D array__
 
 We are going to hit the ground running and import some numerical data. In this case, we have a csv (comma separated variable) file containing historical price and volume data from the Nasdaq Stock Exchange (to be precise, the Nasdaq Composite index). This tutorial assumes the data is located in the followinf _relative path_: `../data/nasdaq.csv`.
 
-We assume that you are running this code from the notebooks directory of this book. The easiest (although not necessarily the most robust) way of running the code is to Launch a notebook using the mybinder service. We also provide instructions (links) at the bottom of this document to assist with installing your own version of Python.
-
-[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/dansand/reschapter)
 
 #### importing data
 
