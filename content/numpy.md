@@ -204,6 +204,15 @@ onetwothree[0]
 
 ```
 
+What about if we wanted the last value in our array? The index scheme 'wraps around' so that `[-1]` is the last value in the array, `[-2]` is teh second last etc. With `[0]` being the first value in teh array, this gives each element in the array two indexes we can use to index, i.e a positive and a negative. 
+
+```python
+print('last value in data:', data[-1])
+```
+```
+('last value in data:', 100.0)
+```
+
 Okay, if you've got this far well done! We just introduced a whole heap of concepts, at a pace that may have left you somewhat overwhelmed! Let's briefly summarise what we just did:
 
 * imported a python library named Numpy
@@ -247,7 +256,7 @@ There are a couple of handy shortcuts with slices. First, if you omit of the ele
 Also, negative indexes visit the elements in reverse order. Given this, which element would we be referring to when we write `data[-1]`? How about using `data[-3]`?
 
 
-### composing the tricks
+### combining our tricks
 
 So now we know about doing maths and slices. Let's see how these techniques combine. Say we have an arbitrary array called `u` then the meaning of the expression `u[1:] - u[:-1]` is demonstrated in the following figure:
 
