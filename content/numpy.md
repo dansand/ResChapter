@@ -303,11 +303,9 @@ Hopefully it's clear that this means our original `data` numpy array had 11496 e
 
 So now we know about doing maths and slices. Let's see how these techniques combine. Say we have an arbitrary array called `u` then the meaning of the expression `u[1:] - u[:-1]` is demonstrated in the following figure:
 
-
 ![Alt](../figs/vectorized_diff.png "difference")
 
 The array that results from  `u[1:] - u[:-1]` is the nth + 1 element of u minus the nth element. Necessarily, output array is one element shorter that u (we loose one element of overlap when we offset)
-
 
 
 #### asking questions / boolean arrays
@@ -326,6 +324,7 @@ We know what `data` is. The new parts here are the `>` symbol and the strange `d
 ```
 data.mean()
 ```
+
 ```
 1336.6577597914056
 ```
@@ -334,7 +333,6 @@ So what about that output, an array of True and ad False values? In plain Englis
 
 * `True` if an an element / value is greater than data.mean()
 * `False` if an element / value is smaller. An array of "true" and `False` is called a Boolean array.
-
 
 The kicker is that we can slice the original array, by this Boolean array:
 
@@ -357,24 +355,44 @@ len(data[data > data.mean()])
 4789
 ```
 
+This process may be more clear if we break it apart a bit by creating an intermediary array. 
+
+```python
+ba = data > data.mean()
+
+len(data[ba])
+```
+
+```
+4789
+```
+
+Here explicity created an array `ba` to store the boolean values (`True` `False `) rather using them implicity. 
+
+
 #The final flourish
 
-Once again, remember that our `data` array contains the daily closing price for the Nasdaq Compisite Index. We are interested in the overall frequency with which today's closing price _change_ follows yesterday's.
+Before we put together our analysis, remember that our `data` array contains the daily closing price for the Nasdaq Compisite Index. We are interested in the overall frequency with which today's closing price _change_ follows yesterday's.
 
-The following line code will return a Numpy array. That array will have one of two values: `True` if todays price `data[1:]` is greater than yesterday's `data[:-1]`; otherwise `False`. The array containing these True and False values are assinged to the new array which we have called `follow`.
+The following line code combines all the Pyton/Numpy skills we have developed. Runnign this code will return a Numpy array which will have one of two values: `True` if one day's price (`data[1:]`) is greater than the previous day's price `data[:-1]`; otherwise `False`. The array containing these True and False values are assinged to the new array which we have called `follow`.
 
 ```python
 follow = data[:-1] < data[1:]
 ```
-Okay, nearly there. This last line of code forms yet another array, containing `True` if an element has the same value as the preceeding element. This is the same as saying, return `True ` if Yesterday's price _change_ was the same as _today's_ price change, otherwise return `False`. Once again these values are assigned to a new variable, called `seq`. 
+
+Think about this for a bit. If the Nasdaq price goes up tow days in a row, the corresponding values in `follow` will be [...,`True`, `True`,...]. If the price went down for any consectuve days, the values would be [...,`False`, `False,...]. 
+
+Finally, we want to assess how often either these consective True or Falsevalues appear. To do that we will run the following code. This uses one new piece of systax: in Python `==` means 'is equal to to'. 
 
 ```python
 seq = follow[:-1] == follow[1:]
 ```
 
+To reiterate, `seq` will contaian return `True ` if Yesterday's price _change_ was the same as _today's_ price change, otherwise return `False`. Once again these values are assigned to a new variable, called `seq
+
 ## Challenge
 
-Your challenge is to combine the following two Python expressions to answer the question what is the overall frequency with which today's closing price _change_ follows yesterday's.
+Your challenge is to combine the following two Python expressions to answer the question what is the overall frequency with which one day's closing price _change_ follows the previous days'. You simple need to combine the two expressions with one of the Python mathermatical operators ('+', '-', '/'). Good luck. 
 
 
 ```python
@@ -390,16 +408,15 @@ a)
 b)
 c)
 
+## Links
+
 Where to next? Give the reader some guide to find more information or how to build on this knowledge. Attach a ‘resource pack’ (YouTube links), contact details and so on.
 
-Bibliography to end.
-*** APA referencing
-
-## Epilogue
+## Further analysis
 
 See the github repo for a more rigourous statistical test
 
-## notes
+## Notes
 
 Numpy vs np
 
