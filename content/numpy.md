@@ -47,7 +47,7 @@ By the end of this chapter you will learn:
 Our example looks at a real (data) science problem. In fact, we are going to to endeavour to _falsify_ a hypothesis.
 We'll try to show that there _are_ predictable patterns in day-to-day stockmarket data, a discovery which would contradict the _efficient market hypothesis_. 
 
-There are a number of statistical analyses relavent to this problem. Our workflow will simply answer __what is the overall frequency with which one days's market value _change_ follows the previous day's _change___. The process we're really trying to investigate is whether the stockmarket (i.e investor decisions) have a slight bias / memory for what happened yesterday. This is a phenomena discussed in more detail in Nate Silver's book _The Signal and the Noise_.
+There are a number of statistical analyses relavent to this problem. Our workflow will simply answer __what is the overall frequency with which one days's market value _change_ follows the previous day's _change___. The process we're really trying to investigate is whether the stockmarket (i.e investor decisions) has a slight bias / memory for what happened yesterday. This is a phenomena discussed in more detail in Nate Silver's book _The Signal and the Noise_.
 
 _But please remember, this is one example out of a vast number of problems that we could have chosen. Don't be lured into thinking that Python is a financial / economics tool. The data analysis here is totally general, and very similar problems (i.e. analysis on structured, numeric data) will appear in multiple disciplines._
 
