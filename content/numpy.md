@@ -123,9 +123,6 @@ plt.plot(data)
 
 ![Alt](../figs/nasdaq.png "Nasdaq data (backwards)")
 
-
-If you're clued into the U.S stockmarket, you'll notice that our data is backwards. This is simply because the data in csv format was ordered by most-recent first. We can easily reverse the data,  but as it will not affect our analysis, we won't bother doing so now. 
-
 The total number of data points (days) can be found by running:
 
 ```python
