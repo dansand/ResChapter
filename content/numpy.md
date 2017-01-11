@@ -373,8 +373,6 @@ A more rigourous statistical test is demonstated in the Jupyter notebook attache
 Silver, Nate. The signal and the noise: the art and science of prediction. Penguin UK, 2012.
 APA	
 
-Shiller, Ilona, and Ishmael Radikoko. "Testing Weak-Form Market Efficiency On The TSX." Journal of Applied Business Research 30.3 (2014): 647.
 
-Sewell, Martin. "The efficient market hypothesis: Empirical evidence." International Journal of Statistics and Probability 1.2 (2012): 164.
 
 
