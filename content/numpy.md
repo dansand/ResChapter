@@ -31,14 +31,21 @@ By the end of this chapter you will learn:
 ### glossary
 
 * Library (e.g Numpy)
+   * consider this a set of functions that are not native to the programming language (Python), nut have to be _imported_ separately - much like a plugin for a GUI-based software.
 * Jupyter notebook
+   * a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text.
 * Variable
+   * a chunk of memory and an associated name / identifier, which contains some quantity of information referred to as a value.
 * Function
-* Boolean, True, False
+   * a piece of organized, reusable code that is used to perform a single, related action
+* Boolean
+   * In most computer programming languages, a Boolean data type is a data type with only two possible values: true or false.
 * Element
+   * if you think of a Numpy array as a table, each cell is called an element. 
 * index
+   * an index is the set of numbers that are used to identify each element, there is one number per dimension.  
 * slice
-* Method
+   * a slice is the Numpy term for returning a subset of an array usinf slicing-syntax and appropriate indices. 
 
 
 ### A data science problem
