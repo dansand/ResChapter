@@ -5,7 +5,7 @@
 
 Python is a _simple general-purpose programming language_. As such, Python is not tied to a specific task or discipline, but is widely used for processing and analysing text, numbers, images, building websites and applications, and increasingly in machine learning and data science. 
 
-Python was created by Guido van Rossum in the early 1990s, its namesake being Monty Python's Flying Circus. It is now developed by a large team of volunteers and is freely available from the Python Software Foundation. That's right, Python is free! More than that, Python has a strong ties to the open source movement. This means there is a culture of sharing and support within the Python 'ecosystem'.
+Python was created by Guido van Rossum in the early 1990s, with Monty Python's Flying Circus as its namesake. It is now developed by a large team of volunteers and is freely available from the Python Software Foundation. That's right, Python is free! More than that, Python has a strong ties to the open source movement. This means there is a culture of sharing and support within the Python 'ecosystem'.
 
 Python, Matlab, or R (or Java, C++, ...)? There are a lot of programming languages, and many tasks - such as the one demonstrated in this chapter - can be completed equally well in all of them. So how to decide? In our group, some researchers chose Python because it was stronger in discipline-specific Libraries than any of its competetors (for instance Neuroscience, Geophysics). However, for those of us who had also dabled in other languages first (e.g. Matlab, R), we found that there was litte 'wasted' effort in switching. Many core concepts extend across all languages, not to mention the more ephemeral skill of 'thinking like a programmer'.
 
