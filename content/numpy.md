@@ -337,7 +337,7 @@ To reiterate, `seq` will contaian return `True ` if Yesterday's price _change_ w
 
 ## Challenge
 
-Your challenge is to understand the meaning and then combine the following two Python expressions to answer the question __what is the overall frequency with which one day's closing price _change_ follows the previous day's__. You simply need to combine the two expressions with one of the Python mathermatical operators ('+', '-', '/').
+Your challenge is to understand the meaning and then combine the following two Python expressions to answer the question __what is the overall frequency with which one day's closing price _change_ follows the previous day's__. You simply need to combine the two expressions with one of the Python mathematical operators ('+', '-', '/').
 
 ```python
 seq.sum(), len(data)
@@ -360,19 +360,7 @@ Where to next? Give the reader some guide to find more information or how to bui
 
 ### Further analysis
 
-See the github repo for a more rigourous statistical test
+A more rigourous statistical test is demonstated in the Jupyter notebook attached to this chapter. 
 
-### Notes
-
-Numpy vs np
-
-The efficient markets hypothesis (EMH), popularly known as the Random Walk Theory,
-is the proposition that current stock prices fully reflect available information about the
-value of the firm, and there is no way to earn excess profits, (more than the market over
-all), by using this information.
-
-After a bit more Python training, you will understand that in writing `data.mean()` that we have accessed a _Method_ of the object `data`.
-
-Installing Python
 
 ### Bibliography
