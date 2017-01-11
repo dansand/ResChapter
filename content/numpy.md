@@ -20,7 +20,7 @@ Using Numpy we're going to tackle a simple data science problem, yet one that ha
 
 While you won't finish this chapter a fully-fledged Python programmer, we hope that you will get a sense of the 'flavour' of how Python works. Don't get too concerned about understanding _every_ piece of code that's written, but instead try to focus on how the programming approach to the __data science problem__ differs from a workflow you might develop using a spreadsheet or application (for instance Excel or SPSS). 
 
-Necessarily, we will introduce some extraneous concepts and terms, that we don't have time to fully-develop or explore . We will provide links ot material to help you master these subjects later on.
+Necessarily, we will introduce some extraneous concepts and terms, that we don't have time to fully-develop or explore . In the Summary section, we provide links to material to help you master these subjects later on.
 
 By the end of this chapter you will learn:
 
@@ -358,7 +358,9 @@ In this chapter you have hopefully learned how easy it is to import and analyse 
 
 ### Summary of Links
 
-Where to next? Give the reader some guide to find more information or how to build on this knowledge. Attach a ‘resource pack’ (YouTube links), contact details and so on.
+[Simple Python introduction](https://tutorial.djangogirls.org/en/python_introduction/)
+[More detailed beginner Python / Numpy tutorial](https://www.gitbook.com/book/dansand/resguides-research-with-jupyter/details)
+[Advanced Numpy tutorial](http://www.labri.fr/perso/nrougier/from-python-to-numpy/)
 
 ### Further analysis
 
