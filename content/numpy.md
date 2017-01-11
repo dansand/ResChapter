@@ -373,6 +373,8 @@ A more rigourous statistical test is demonstated in the Jupyter notebook attache
 Silver, Nate. The signal and the noise: the art and science of prediction. Penguin UK, 2012.
 APA	
 
+### Dan notes (to be deleted)
 
+Still need consistent fomratting for terms in glossary - italics, bold italics?
 
 
