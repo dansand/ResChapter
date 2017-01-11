@@ -354,7 +354,7 @@ a)
 b)
 c)
 
-### Links
+### Summary of Links
 
 Where to next? Give the reader some guide to find more information or how to build on this knowledge. Attach a ‘resource pack’ (YouTube links), contact details and so on.
 
