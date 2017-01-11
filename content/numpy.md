@@ -354,7 +354,7 @@ seq.sum(), len(data)
 
 ### What just happened?
 
-In this chapter you have hopefully learned how easy it is to import and analyse data using Python / Numpy. If you haven't seen progamming before, it is likely that some of the steps still seem a bit bamboozling. Remeber, this was an extremely fast-paced example. If you are interested in learning more, it may be a good time to turn to a more thorough introduction before returning to this example.  Nevertheless you should now have the 'flavour' of how a data analysis workflow looks in Python / Numpy. The skills you learned here - indexing, slicing, and asking 'boolean' question of Numpy arrays are very general, and can be reformulated to deliver a range of sophisticated quantiative analyses. 
+After reading this chapter you have hopefully gained some apprciation how easy it is to import and analyse data using Python / Numpy. If you haven't seen progamming before, it is likely that some of the steps still seem a bit bamboozling. Remember, this was an extremely fast-paced example. If you are interested in learning more, it may be a good time to turn to a more thorough introduction before coming back to this example.  Nevertheless we hope you now have the 'flavour' of how a data analysis workflow looks in Python / Numpy. The skills you learned here - indexing, slicing, and asking 'boolean' question of Numpy arrays are very general, and can be reformulated to deliver a range of sophisticated quantiative analyses. 
 
 ### Summary of Links
 
