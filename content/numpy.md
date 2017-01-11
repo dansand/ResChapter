@@ -347,12 +347,7 @@ seq.sum(), len(data)
 
 ### What just happened?
 
-Summarise the main learning objectives/ key points covered in your chapter. These are different from the Learning Objectives where you assume no knowledge. Here you can assume knowledge gained after reading your chapter.
-
-You have learned (how has this chapter provided the reader value):
-a)
-b)
-c)
+In this chapter you have hopefully learned how easy it is to import and analyse data using Python / Numpy. If you haven't seen progamming before, it is likely that some of the steps still seem a bit bamboozling. Remeber, this was an extremely fast-paced example. If you are interested in learning more, it may be a good time to turn to a more thorough introduction before returning to this example.  Nevertheless you should now have the 'flavour' of how a data analysis workflow looks in Python / Numpy. The skills you learned here - indexing, slicing, and asking 'boolean' question of Numpy arrays are very general, and can be reformulated to deliver a range of sophisticated quantiative analyses. 
 
 ### Summary of Links
 
@@ -360,7 +355,22 @@ Where to next? Give the reader some guide to find more information or how to bui
 
 ### Further analysis
 
-A more rigourous statistical test is demonstated in the Jupyter notebook attached to this chapter. 
-
+A more rigourous statistical test is demonstated in the Jupyter notebook attached to this chapter.
 
 ### Bibliography
+
+### Futher notes
+
+In this chapter we used imported the Numpy library as follows:
+ 
+```
+import numpy
+```
+
+But you will hardly ever see this. By convection Numpy is usually renamed to np:
+
+```
+import numpy as np
+```
+
+All we have to do noew is reaplace all instaces of numpy in our code with np.
