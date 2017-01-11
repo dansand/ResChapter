@@ -359,7 +359,9 @@ In this chapter you have hopefully learned how easy it is to import and analyse 
 ### Summary of Links
 
 [Simple Python introduction](https://tutorial.djangogirls.org/en/python_introduction/)
+
 [More detailed beginner Python / Numpy tutorial](https://www.gitbook.com/book/dansand/resguides-research-with-jupyter/details)
+
 [Advanced Numpy tutorial](http://www.labri.fr/perso/nrougier/from-python-to-numpy/)
 
 ### Further analysis
@@ -368,18 +370,4 @@ A more rigourous statistical test is demonstated in the Jupyter notebook attache
 
 ### Bibliography
 
-### Futher notes
 
-In this chapter we used imported the Numpy library as follows:
- 
-```
-import numpy
-```
-
-But you will hardly ever see this. By convection Numpy is usually renamed to np:
-
-```
-import numpy as np
-```
-
-All we have to do noew is reaplace all instaces of numpy in our code with np.
