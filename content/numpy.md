@@ -3,9 +3,9 @@
 
 ## Introduction
 
-Python is a _simple general-purpose programming language_. As such, Python is not tied to a specific task or discipline, but is widely used for processing and analyising text, numbers, images, building websites and applications, and increasingly in machine learning and data science. 
+Python is a _simple general-purpose programming language_. As such, Python is not tied to a specific task or discipline, but is widely used for processing and analysing text, numbers, images, building websites and applications, and increasingly in machine learning and data science. 
 
-Python was created by Guido van Rossum in 1990, its namesake being Monty Python's Flying Circus. It is now developed by a large team of volunteers and is freely available from the Python Software Foundation. That's right, Python is free! More than that, Python has a strong ties to the open source movement. This means there is a culture of sharing and support within the Python 'ecosystem'.
+Python was created by Guido van Rossum in the early 1990s, its namesake being Monty Python's Flying Circus. It is now developed by a large team of volunteers and is freely available from the Python Software Foundation. That's right, Python is free! More than that, Python has a strong ties to the open source movement. This means there is a culture of sharing and support within the Python 'ecosystem'.
 
 Python, Matlab, or R (or Java, C++, ...)? There are a lot of programming languages, and many tasks - such as the one demonstrated in this chapter - can be completed equally well in all of them. So how to decide? In our group, some researchers chose Python because it was stronger in discipline-specific Libraries than any of its competetors (for instance Neuroscience, Geophysics). However, for those of us who had also dabled in other languages first (e.g. Matlab, R), we found that there was litte 'wasted' effort in switching. Many core concepts extend across all languages, not to mention the more ephemeral skill of 'thinking like a programmer'.
 
@@ -16,10 +16,9 @@ Finally, the introduction should end with a contents page listing how the rest o
 
 In this chapter we're going to look a Python library called Numpy (numeric Python). A library is group of tools (code) designed to assist a common purpose, yet somehow outside the `core` capabilities of the Langauge. Numpy provides the ability to work with structured groups of numbers (arrays). Depending on the situation, these could represent individual measurements, vectors, time series, tables, grids, matrices, etc.
 
-Using Numpy we're going to tackle a simple data science problem, yet one that has some profound implications. If you are new to Python and Numpy, our main suggestion is to __try to understand and keep the data science problem in mind__. Hopefully, if you have a good handle on the problem itself, the utility and efficiency of Python / Numpy will be apparent.
+Using Numpy we're going to tackle a simple data science problem, yet one that has some profound implications. If you are new to Python and Numpy, our main suggestion is to __try to understand the data science problem__. Hopefully, if you have a good handle on the problem itself, the utility and efficiency of Python / Numpy will be apparent.
 
-
-While you won't finish this chapter a fully-fledged Python programmer, we hope that you will get a sense of the 'flavour' of how Python works. Don't get too concerned about understanding _every_ piece of code that's written, but instead try to focus on how the programming approach to the __data science problem__ differs from a workflow you might develop using a spreadsheet or application (for instance Excel or SPSS).
+While you won't finish this chapter a fully-fledged Python programmer, we hope that you will get a sense of the 'flavour' of how Python works. Don't get too concerned about understanding _every_ piece of code that's written, but instead try to focus on how the programming approach to the __data science problem__ differs from a workflow you might develop using a spreadsheet or application (for instance Excel or SPSS). 
 
 Necessarily, we will introduce some extraneous concepts and terms, that we don't have time to fully-develop or explore . We will provide links ot material to help you master these subjects later on.
 
@@ -44,10 +43,9 @@ By the end of this chapter you will learn:
 
 ### A data science problem
 
-Our example looks at a real (data) science problem. In fact, we are going to to endeavour to _falsify_ a hypothesis.
-We'll try to show that there _are_ predictable patterns in day-to-day stockmarket data, a discovery which would contradict the _efficient market hypothesis_. 
+Our example looks at a real (data) science problem. In fact, very shortly we are going to to endeavour to _falsify_ a hypothesis. We'll try to show that there _are_ predictable patterns in day-to-day stockmarket data, a discovery which would contradict the _efficient market hypothesis_. 
 
-There are a number of statistical analyses relavent to this problem. Our workflow will simply answer __what is the overall frequency with which one days's market value _change_ follows the previous day's _change___. The process we're really trying to investigate is whether the stockmarket (i.e investor decisions) has a slight bias / memory for what happened yesterday. This is a phenomena discussed in more detail in Nate Silver's book _The Signal and the Noise_.
+There are a number of statistical analyses relavent to this problem. Howevery our workflow will simply try to determine __what is the overall frequency with which one days's market value _change_ follows the previous day's _change___. The process we're really trying to investigate is whether the stockmarket (i.e investor decisions) has a slight bias / memory for what happened yesterday. This is a problem discussed in more detail in Nate Silver's book _The Signal and the Noise_.
 
 _But please remember, this is one example out of a vast number of problems that we could have chosen. Don't be lured into thinking that Python is a financial / economics tool. The data analysis here is totally general, and very similar problems (i.e. analysis on structured, numeric data) will appear in multiple disciplines._
 
@@ -61,7 +59,7 @@ There are a minimal set of instructions within your Jupyer notebook to get you u
 
 ## Numpy
 
-What do we mean by structured, numeric data? Numpy arrays are tables of numbers. The tables of may look like sequences (1-D), grids (2-D), or hyper-grids (n-D). In this tutorial we'll deal only with 1-D Numpy arrays, which are just a sequence of numbers stretching along their single axis.  Think of these data as a time series, with `n` values (which we call the elements of the array). A 1-D and 2-D array are shown below:
+What do we mean by structured, numeric data? Numpy arrays are tables of numbers. The tables of may look like sequences (1-D), grids (2-D), or hyper-grids (n-D). In this tutorial we'll deal only with 1-D Numpy arrays, which are just a sequence of numbers stretching along their single axis. Think of these data as a time series, with `n` values (which we call the elements of the array). A 1-D and 2-D array are shown below:
 
 __Example of 1-D array__
 
@@ -84,12 +82,12 @@ __Example of 2-D array__
    └───┴───┴───┘
 ```
 
-Of course, Numpy is not just numbers in grid form. As we we see, it is also a set of syntax and functions to concisely and efficiently, wrangle, query and analyse stored numbers. 
+Of course, Numpy is not just numbers in grid form. As we will see, it is also a set of syntax and functions to concisely and efficiently, wrangle, query and analyse the numbers stored in your computer's memory. 
 
 
 ### importing data
 
-We are going to dive right in and import some quantitative data. In this case, we have a csv (comma separated variable) file containing historical price and volume data from the Nasdaq Stock Exchange (to be precise, the Nasdaq Composite index). This tutorial assumes the data is located in the followinf _relative path_: `data/nasdaq.csv`.
+We are going to dive right in and import some quantitative data. In this case, we have a plain text file with csv format (comma separated variable). This file contains historical price data from the Nasdaq Stock Exchange (to be precise, the Nasdaq Composite index). This tutorial assumes the data is located in the followinf _relative path_: `data/nasdaq.csv`. To import the data, you will need to run the following cells in the notebook (or wherever you are running this excercise from). 
 
 ```python
 numpy.loadtxt('../data/nasdaq.csv')
@@ -106,13 +104,13 @@ When we execucted this code, Python returned a set of numbers to us, enclosed in
 
 ### numpy arrays as variables
 
-We can also assign a numpy array to a _variable_.  Let's re-run `numpy.loadtxt` and save its result:
+We can also assign a numpy array to a _variable_.  Let's re-run `numpy.loadtxt` and save its result as a variable called `data`:
 
 ```python
 data = numpy.loadtxt('../data/nasdaq.csv')
 ```
 
-When we create a varible (using the `=` sign), the object on thr RHS of the `=` is now assigned to the variable name. The object (in this case an array of numbers) gets stored in memory, and the name we _chose_ for our variable becomes the object that we work with. Let's plot the variable `data`, to reassure ourselves that it 'contains' our numbers. 
+When we create a varible (using the `=` sign), the object on the RHS of the `=` is now assigned to the variable name. The object (in this case a Numpy array containg out data) gets stored in memory, and the name we _chose_ for our variable _becomes the thing that we work with_. Let's plot the variable `data`, to reassure ourselves that it 'contains' our numbers. 
 
 The following lines will produce a simple plot of the the data. The only thing you need to understand here is that there is a python function called `plt.plot` that generates plots. To actually use this function we have to hand it an object to plot. In this case it was our variable (our Numpy array) called `data`. 
 
@@ -140,8 +138,9 @@ We say that the variable we named `data` has an _attribute_ called _shape_. The 
 
 A useful feature of Numpy arrays is that we can do maths with entire arrays at once. Let's see this by running some code:
 
+
 ```python
-data*2
+data + data
 ```
 
 ```
@@ -149,10 +148,11 @@ array([   200.      ,    201.679992,    201.520004, ...,  10426.44043 ,
         10454.419922,  10499.799804])
 ```
 
+
 Python returned 2  times each element of the original array, as does:
 
 ```python
-data + data
+data*2
 ```
 
 ```
@@ -168,6 +168,8 @@ data - data
 ```
 array([ 0.,  0.,  0., ...,  0.,  0.,  0.])
 ```
+
+As you just saw, we can apply mathematical operators to Numpy arrays in a very straightforward way. Later we will see that there are other operators called _Boolean_ or _conditional_ operators that work in much the same way but will help us ask question about the numbers in out Numpy arrays.
 
 ### indexing
 
